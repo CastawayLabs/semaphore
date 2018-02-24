@@ -18,6 +18,7 @@
 // db/migrations/v2.3.1.sql
 // db/migrations/v2.3.2.sql
 // db/migrations/v2.4.0.sql
+// db/migrations/v2.5.0.sql
 // public/css/.gitignore
 // public/css/login.less
 // public/css/octocat.less
@@ -38,6 +39,12 @@
 // public/html/auth/login.pug
 // public/html/auth/logout.html
 // public/html/auth/logout.pug
+// public/html/users/add.html
+// public/html/users/add.pug
+// public/html/users/list.html
+// public/html/users/list.pug
+// public/html/users/user.html
+// public/html/users/user.pug
 // public/html/projects/add.html
 // public/html/projects/add.pug
 // public/html/projects/container.html
@@ -56,12 +63,20 @@
 // public/html/projects/environment/add.pug
 // public/html/projects/environment/list.html
 // public/html/projects/environment/list.pug
+// public/html/projects/templates/add.html
+// public/html/projects/templates/add.pug
+// public/html/projects/templates/list.html
+// public/html/projects/templates/list.pug
 // public/html/projects/inventory/add.html
 // public/html/projects/inventory/add.pug
 // public/html/projects/inventory/edit.html
 // public/html/projects/inventory/edit.pug
 // public/html/projects/inventory/list.html
 // public/html/projects/inventory/list.pug
+// public/html/projects/users/add.html
+// public/html/projects/users/add.pug
+// public/html/projects/users/list.html
+// public/html/projects/users/list.pug
 // public/html/projects/keys/add.html
 // public/html/projects/keys/add.pug
 // public/html/projects/keys/list.html
@@ -70,25 +85,14 @@
 // public/html/projects/repositories/add.pug
 // public/html/projects/repositories/list.html
 // public/html/projects/repositories/list.pug
-// public/html/projects/templates/add.html
-// public/html/projects/templates/add.pug
-// public/html/projects/templates/list.html
-// public/html/projects/templates/list.pug
-// public/html/projects/users/add.html
-// public/html/projects/users/add.pug
-// public/html/projects/users/list.html
-// public/html/projects/users/list.pug
-// public/html/users/add.html
-// public/html/users/add.pug
-// public/html/users/list.html
-// public/html/users/list.pug
-// public/html/users/user.html
-// public/html/users/user.pug
 // public/img/icon.png
 // public/img/logo.png
 // public/img/screenshot.png
 // public/js/app.js
 // public/js/bundle.js
+// public/js/routes/auth.js
+// public/js/routes/project.js
+// public/js/routes/router.js
 // public/js/controllers/admin.js
 // public/js/controllers/dashboard.js
 // public/js/controllers/login.js
@@ -105,6 +109,13 @@
 // public/js/controllers/projects/taskRunner.js
 // public/js/controllers/projects/templates.js
 // public/js/controllers/projects/users.js
+// public/js/services/hostgroups.js
+// public/js/services/identities.js
+// public/js/services/jobs.js
+// public/js/services/playbooks.js
+// public/js/services/tasks.js
+// public/js/services/user.js
+// public/js/services/users.js
 // public/js/factories/host.js
 // public/js/factories/hostgroup.js
 // public/js/factories/identity.js
@@ -113,16 +124,6 @@
 // public/js/factories/project.js
 // public/js/factories/task.js
 // public/js/factories/user.js
-// public/js/routes/auth.js
-// public/js/routes/project.js
-// public/js/routes/router.js
-// public/js/services/hostgroups.js
-// public/js/services/identities.js
-// public/js/services/jobs.js
-// public/js/services/playbooks.js
-// public/js/services/tasks.js
-// public/js/services/user.js
-// public/js/services/users.js
 // public/vendor/.git
 // public/vendor/angular-couch-potato.js
 // public/vendor/angular-ui-router.min.js
@@ -130,34 +131,20 @@
 // public/vendor/angular.min.js
 // public/vendor/async.js
 // public/vendor/require.min.js
+// public/vendor/scrollglue.js
 // public/vendor/angular-loading-bar/loading-bar.css
 // public/vendor/angular-loading-bar/loading-bar.js
 // public/vendor/angular-loading-bar/loading-bar.min.js
+// public/vendor/moment/moment-tz.js
+// public/vendor/moment/moment-tz.min.js
+// public/vendor/moment/moment.js
+// public/vendor/moment/moment.min.js
 // public/vendor/bootstrap/.editorconfig
 // public/vendor/bootstrap/.gitattributes
 // public/vendor/bootstrap/.gitignore
 // public/vendor/bootstrap/README.md
 // public/vendor/bootstrap/bower.json
 // public/vendor/bootstrap/package.json
-// public/vendor/bootstrap/dist/css/bootstrap-theme.css
-// public/vendor/bootstrap/dist/css/bootstrap-theme.css.map
-// public/vendor/bootstrap/dist/css/bootstrap-theme.min.css
-// public/vendor/bootstrap/dist/css/bootstrap.css
-// public/vendor/bootstrap/dist/css/bootstrap.css.map
-// public/vendor/bootstrap/dist/css/bootstrap.min.css
-// public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.eot
-// public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.svg
-// public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf
-// public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff
-// public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2
-// public/vendor/bootstrap/dist/js/bootstrap.js
-// public/vendor/bootstrap/dist/js/bootstrap.min.js
-// public/vendor/bootstrap/dist/js/npm.js
-// public/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot
-// public/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg
-// public/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf
-// public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff
-// public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2
 // public/vendor/bootstrap/less/.csscomb.json
 // public/vendor/bootstrap/less/.csslintrc
 // public/vendor/bootstrap/less/alerts.less
@@ -231,12 +218,25 @@
 // public/vendor/bootstrap/less/mixins/text-emphasis.less
 // public/vendor/bootstrap/less/mixins/text-overflow.less
 // public/vendor/bootstrap/less/mixins/vendor-prefixes.less
-// public/vendor/fontawesome/fonts/FontAwesome.otf
-// public/vendor/fontawesome/fonts/fontawesome-webfont.eot
-// public/vendor/fontawesome/fonts/fontawesome-webfont.svg
-// public/vendor/fontawesome/fonts/fontawesome-webfont.ttf
-// public/vendor/fontawesome/fonts/fontawesome-webfont.woff
-// public/vendor/fontawesome/fonts/fontawesome-webfont.woff2
+// public/vendor/bootstrap/dist/css/bootstrap-theme.css
+// public/vendor/bootstrap/dist/css/bootstrap-theme.css.map
+// public/vendor/bootstrap/dist/css/bootstrap-theme.min.css
+// public/vendor/bootstrap/dist/css/bootstrap.css
+// public/vendor/bootstrap/dist/css/bootstrap.css.map
+// public/vendor/bootstrap/dist/css/bootstrap.min.css
+// public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.eot
+// public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.svg
+// public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf
+// public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff
+// public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2
+// public/vendor/bootstrap/dist/js/bootstrap.js
+// public/vendor/bootstrap/dist/js/bootstrap.min.js
+// public/vendor/bootstrap/dist/js/npm.js
+// public/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot
+// public/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg
+// public/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf
+// public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff
+// public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2
 // public/vendor/fontawesome/less/animated.less
 // public/vendor/fontawesome/less/bordered-pulled.less
 // public/vendor/fontawesome/less/core.less
@@ -250,10 +250,12 @@
 // public/vendor/fontawesome/less/rotated-flipped.less
 // public/vendor/fontawesome/less/stacked.less
 // public/vendor/fontawesome/less/variables.less
-// public/vendor/moment/moment-tz.js
-// public/vendor/moment/moment-tz.min.js
-// public/vendor/moment/moment.js
-// public/vendor/moment/moment.min.js
+// public/vendor/fontawesome/fonts/FontAwesome.otf
+// public/vendor/fontawesome/fonts/fontawesome-webfont.eot
+// public/vendor/fontawesome/fonts/fontawesome-webfont.svg
+// public/vendor/fontawesome/fonts/fontawesome-webfont.ttf
+// public/vendor/fontawesome/fonts/fontawesome-webfont.woff
+// public/vendor/fontawesome/fonts/fontawesome-webfont.woff2
 // public/vendor/sweetalert/sweetalert.css
 // public/vendor/sweetalert/sweetalert.min.js
 // DO NOT EDIT!
@@ -284,7 +286,7 @@ type asset struct {
 
 // configJson reads file data from disk. It returns an error on failure.
 func configJson() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/config.json"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/config.json"
 	name := "config.json"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -302,7 +304,7 @@ func configJson() (*asset, error) {
 
 // dbMigrationsV000Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV000Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v0.0.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v0.0.0.sql"
 	name := "db/migrations/v0.0.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -320,7 +322,7 @@ func dbMigrationsV000Sql() (*asset, error) {
 
 // dbMigrationsV010Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV010Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v0.1.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v0.1.0.sql"
 	name := "db/migrations/v0.1.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -338,7 +340,7 @@ func dbMigrationsV010Sql() (*asset, error) {
 
 // dbMigrationsV100Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV100Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.0.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.0.0.sql"
 	name := "db/migrations/v1.0.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -356,7 +358,7 @@ func dbMigrationsV100Sql() (*asset, error) {
 
 // dbMigrationsV110Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV110Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.1.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.1.0.sql"
 	name := "db/migrations/v1.1.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -374,7 +376,7 @@ func dbMigrationsV110Sql() (*asset, error) {
 
 // dbMigrationsV120Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV120Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.2.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.2.0.sql"
 	name := "db/migrations/v1.2.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -392,7 +394,7 @@ func dbMigrationsV120Sql() (*asset, error) {
 
 // dbMigrationsV130Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV130Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.3.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.3.0.sql"
 	name := "db/migrations/v1.3.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -410,7 +412,7 @@ func dbMigrationsV130Sql() (*asset, error) {
 
 // dbMigrationsV140Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV140Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.4.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.4.0.sql"
 	name := "db/migrations/v1.4.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -428,7 +430,7 @@ func dbMigrationsV140Sql() (*asset, error) {
 
 // dbMigrationsV150Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV150Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.5.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.5.0.sql"
 	name := "db/migrations/v1.5.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -446,7 +448,7 @@ func dbMigrationsV150Sql() (*asset, error) {
 
 // dbMigrationsV160Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV160Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.6.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.6.0.sql"
 	name := "db/migrations/v1.6.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -464,7 +466,7 @@ func dbMigrationsV160Sql() (*asset, error) {
 
 // dbMigrationsV170Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV170Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.7.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.7.0.sql"
 	name := "db/migrations/v1.7.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -482,7 +484,7 @@ func dbMigrationsV170Sql() (*asset, error) {
 
 // dbMigrationsV180Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV180Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.8.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.8.0.sql"
 	name := "db/migrations/v1.8.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -500,7 +502,7 @@ func dbMigrationsV180Sql() (*asset, error) {
 
 // dbMigrationsV190Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV190Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.9.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v1.9.0.sql"
 	name := "db/migrations/v1.9.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -518,7 +520,7 @@ func dbMigrationsV190Sql() (*asset, error) {
 
 // dbMigrationsV221Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV221Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v2.2.1.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v2.2.1.sql"
 	name := "db/migrations/v2.2.1.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -536,7 +538,7 @@ func dbMigrationsV221Sql() (*asset, error) {
 
 // dbMigrationsV230Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV230Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v2.3.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v2.3.0.sql"
 	name := "db/migrations/v2.3.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -554,7 +556,7 @@ func dbMigrationsV230Sql() (*asset, error) {
 
 // dbMigrationsV231Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV231Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v2.3.1.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v2.3.1.sql"
 	name := "db/migrations/v2.3.1.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -572,7 +574,7 @@ func dbMigrationsV231Sql() (*asset, error) {
 
 // dbMigrationsV232Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV232Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v2.3.2.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v2.3.2.sql"
 	name := "db/migrations/v2.3.2.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -590,8 +592,26 @@ func dbMigrationsV232Sql() (*asset, error) {
 
 // dbMigrationsV240Sql reads file data from disk. It returns an error on failure.
 func dbMigrationsV240Sql() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/db/migrations/v2.4.0.sql"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v2.4.0.sql"
 	name := "db/migrations/v2.4.0.sql"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// dbMigrationsV250Sql reads file data from disk. It returns an error on failure.
+func dbMigrationsV250Sql() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/db/migrations/v2.5.0.sql"
+	name := "db/migrations/v2.5.0.sql"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
 		return nil, err
@@ -608,7 +628,7 @@ func dbMigrationsV240Sql() (*asset, error) {
 
 // publicCssGitignore reads file data from disk. It returns an error on failure.
 func publicCssGitignore() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/css/.gitignore"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/css/.gitignore"
 	name := "public/css/.gitignore"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -626,7 +646,7 @@ func publicCssGitignore() (*asset, error) {
 
 // publicCssLoginLess reads file data from disk. It returns an error on failure.
 func publicCssLoginLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/css/login.less"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/css/login.less"
 	name := "public/css/login.less"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -644,7 +664,7 @@ func publicCssLoginLess() (*asset, error) {
 
 // publicCssOctocatLess reads file data from disk. It returns an error on failure.
 func publicCssOctocatLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/css/octocat.less"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/css/octocat.less"
 	name := "public/css/octocat.less"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -662,7 +682,7 @@ func publicCssOctocatLess() (*asset, error) {
 
 // publicCssSemaphoreCss reads file data from disk. It returns an error on failure.
 func publicCssSemaphoreCss() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/css/semaphore.css"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/css/semaphore.css"
 	name := "public/css/semaphore.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -680,7 +700,7 @@ func publicCssSemaphoreCss() (*asset, error) {
 
 // publicCssSemaphoreLess reads file data from disk. It returns an error on failure.
 func publicCssSemaphoreLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/css/semaphore.less"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/css/semaphore.less"
 	name := "public/css/semaphore.less"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -698,7 +718,7 @@ func publicCssSemaphoreLess() (*asset, error) {
 
 // publicHtmlGitignore reads file data from disk. It returns an error on failure.
 func publicHtmlGitignore() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/.gitignore"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/.gitignore"
 	name := "public/html/.gitignore"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -716,7 +736,7 @@ func publicHtmlGitignore() (*asset, error) {
 
 // publicHtmlAbstractHtml reads file data from disk. It returns an error on failure.
 func publicHtmlAbstractHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/abstract.html"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/abstract.html"
 	name := "public/html/abstract.html"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -734,7 +754,7 @@ func publicHtmlAbstractHtml() (*asset, error) {
 
 // publicHtmlAbstractPug reads file data from disk. It returns an error on failure.
 func publicHtmlAbstractPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/abstract.pug"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/abstract.pug"
 	name := "public/html/abstract.pug"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -752,7 +772,7 @@ func publicHtmlAbstractPug() (*asset, error) {
 
 // publicHtmlAdminHtml reads file data from disk. It returns an error on failure.
 func publicHtmlAdminHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/admin.html"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/admin.html"
 	name := "public/html/admin.html"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -770,7 +790,7 @@ func publicHtmlAdminHtml() (*asset, error) {
 
 // publicHtmlAdminPug reads file data from disk. It returns an error on failure.
 func publicHtmlAdminPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/admin.pug"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/admin.pug"
 	name := "public/html/admin.pug"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -788,7 +808,7 @@ func publicHtmlAdminPug() (*asset, error) {
 
 // publicHtmlDashboardHtml reads file data from disk. It returns an error on failure.
 func publicHtmlDashboardHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/dashboard.html"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/dashboard.html"
 	name := "public/html/dashboard.html"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -806,7 +826,7 @@ func publicHtmlDashboardHtml() (*asset, error) {
 
 // publicHtmlDashboardPug reads file data from disk. It returns an error on failure.
 func publicHtmlDashboardPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/dashboard.pug"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/dashboard.pug"
 	name := "public/html/dashboard.pug"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -824,7 +844,7 @@ func publicHtmlDashboardPug() (*asset, error) {
 
 // publicHtmlIndexHtml reads file data from disk. It returns an error on failure.
 func publicHtmlIndexHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/index.html"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/index.html"
 	name := "public/html/index.html"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -842,7 +862,7 @@ func publicHtmlIndexHtml() (*asset, error) {
 
 // publicHtmlIndexPug reads file data from disk. It returns an error on failure.
 func publicHtmlIndexPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/index.pug"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/index.pug"
 	name := "public/html/index.pug"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -860,7 +880,7 @@ func publicHtmlIndexPug() (*asset, error) {
 
 // publicHtmlTasksHtml reads file data from disk. It returns an error on failure.
 func publicHtmlTasksHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/tasks.html"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/tasks.html"
 	name := "public/html/tasks.html"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -878,7 +898,7 @@ func publicHtmlTasksHtml() (*asset, error) {
 
 // publicHtmlTasksPug reads file data from disk. It returns an error on failure.
 func publicHtmlTasksPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/tasks.pug"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/tasks.pug"
 	name := "public/html/tasks.pug"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -896,7 +916,7 @@ func publicHtmlTasksPug() (*asset, error) {
 
 // publicHtmlAuthLoginHtml reads file data from disk. It returns an error on failure.
 func publicHtmlAuthLoginHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/auth/login.html"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/auth/login.html"
 	name := "public/html/auth/login.html"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -914,7 +934,7 @@ func publicHtmlAuthLoginHtml() (*asset, error) {
 
 // publicHtmlAuthLoginPug reads file data from disk. It returns an error on failure.
 func publicHtmlAuthLoginPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/auth/login.pug"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/auth/login.pug"
 	name := "public/html/auth/login.pug"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -932,7 +952,7 @@ func publicHtmlAuthLoginPug() (*asset, error) {
 
 // publicHtmlAuthLogoutHtml reads file data from disk. It returns an error on failure.
 func publicHtmlAuthLogoutHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/auth/logout.html"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/auth/logout.html"
 	name := "public/html/auth/logout.html"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -950,728 +970,8 @@ func publicHtmlAuthLogoutHtml() (*asset, error) {
 
 // publicHtmlAuthLogoutPug reads file data from disk. It returns an error on failure.
 func publicHtmlAuthLogoutPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/auth/logout.pug"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/auth/logout.pug"
 	name := "public/html/auth/logout.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsAddHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsAddHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/add.html"
-	name := "public/html/projects/add.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsAddPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsAddPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/add.pug"
-	name := "public/html/projects/add.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsContainerHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsContainerHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/container.html"
-	name := "public/html/projects/container.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsContainerPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsContainerPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/container.pug"
-	name := "public/html/projects/container.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsCreatetaskmodalHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsCreatetaskmodalHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/createTaskModal.html"
-	name := "public/html/projects/createTaskModal.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsCreatetaskmodalPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsCreatetaskmodalPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/createTaskModal.pug"
-	name := "public/html/projects/createTaskModal.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsDashboardHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsDashboardHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/dashboard.html"
-	name := "public/html/projects/dashboard.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsDashboardPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsDashboardPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/dashboard.pug"
-	name := "public/html/projects/dashboard.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsEditHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsEditHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/edit.html"
-	name := "public/html/projects/edit.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsEditPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsEditPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/edit.pug"
-	name := "public/html/projects/edit.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsScheduleHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsScheduleHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/schedule.html"
-	name := "public/html/projects/schedule.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsSchedulePug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsSchedulePug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/schedule.pug"
-	name := "public/html/projects/schedule.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsTaskmodalHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsTaskmodalHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/taskModal.html"
-	name := "public/html/projects/taskModal.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsTaskmodalPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsTaskmodalPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/taskModal.pug"
-	name := "public/html/projects/taskModal.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsEnvironmentAddHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsEnvironmentAddHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/environment/add.html"
-	name := "public/html/projects/environment/add.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsEnvironmentAddPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsEnvironmentAddPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/environment/add.pug"
-	name := "public/html/projects/environment/add.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsEnvironmentListHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsEnvironmentListHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/environment/list.html"
-	name := "public/html/projects/environment/list.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsEnvironmentListPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsEnvironmentListPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/environment/list.pug"
-	name := "public/html/projects/environment/list.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsInventoryAddHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsInventoryAddHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/inventory/add.html"
-	name := "public/html/projects/inventory/add.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsInventoryAddPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsInventoryAddPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/inventory/add.pug"
-	name := "public/html/projects/inventory/add.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsInventoryEditHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsInventoryEditHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/inventory/edit.html"
-	name := "public/html/projects/inventory/edit.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsInventoryEditPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsInventoryEditPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/inventory/edit.pug"
-	name := "public/html/projects/inventory/edit.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsInventoryListHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsInventoryListHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/inventory/list.html"
-	name := "public/html/projects/inventory/list.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsInventoryListPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsInventoryListPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/inventory/list.pug"
-	name := "public/html/projects/inventory/list.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsKeysAddHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsKeysAddHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/keys/add.html"
-	name := "public/html/projects/keys/add.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsKeysAddPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsKeysAddPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/keys/add.pug"
-	name := "public/html/projects/keys/add.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsKeysListHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsKeysListHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/keys/list.html"
-	name := "public/html/projects/keys/list.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsKeysListPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsKeysListPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/keys/list.pug"
-	name := "public/html/projects/keys/list.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsRepositoriesAddHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsRepositoriesAddHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/repositories/add.html"
-	name := "public/html/projects/repositories/add.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsRepositoriesAddPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsRepositoriesAddPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/repositories/add.pug"
-	name := "public/html/projects/repositories/add.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsRepositoriesListHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsRepositoriesListHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/repositories/list.html"
-	name := "public/html/projects/repositories/list.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsRepositoriesListPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsRepositoriesListPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/repositories/list.pug"
-	name := "public/html/projects/repositories/list.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsTemplatesAddHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsTemplatesAddHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/templates/add.html"
-	name := "public/html/projects/templates/add.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsTemplatesAddPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsTemplatesAddPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/templates/add.pug"
-	name := "public/html/projects/templates/add.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsTemplatesListHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsTemplatesListHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/templates/list.html"
-	name := "public/html/projects/templates/list.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsTemplatesListPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsTemplatesListPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/templates/list.pug"
-	name := "public/html/projects/templates/list.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsUsersAddHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsUsersAddHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/users/add.html"
-	name := "public/html/projects/users/add.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsUsersAddPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsUsersAddPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/users/add.pug"
-	name := "public/html/projects/users/add.pug"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsUsersListHtml reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsUsersListHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/users/list.html"
-	name := "public/html/projects/users/list.html"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicHtmlProjectsUsersListPug reads file data from disk. It returns an error on failure.
-func publicHtmlProjectsUsersListPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/projects/users/list.pug"
-	name := "public/html/projects/users/list.pug"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
 		return nil, err
@@ -1688,7 +988,7 @@ func publicHtmlProjectsUsersListPug() (*asset, error) {
 
 // publicHtmlUsersAddHtml reads file data from disk. It returns an error on failure.
 func publicHtmlUsersAddHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/users/add.html"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/users/add.html"
 	name := "public/html/users/add.html"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1706,7 +1006,7 @@ func publicHtmlUsersAddHtml() (*asset, error) {
 
 // publicHtmlUsersAddPug reads file data from disk. It returns an error on failure.
 func publicHtmlUsersAddPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/users/add.pug"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/users/add.pug"
 	name := "public/html/users/add.pug"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1724,7 +1024,7 @@ func publicHtmlUsersAddPug() (*asset, error) {
 
 // publicHtmlUsersListHtml reads file data from disk. It returns an error on failure.
 func publicHtmlUsersListHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/users/list.html"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/users/list.html"
 	name := "public/html/users/list.html"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1742,7 +1042,7 @@ func publicHtmlUsersListHtml() (*asset, error) {
 
 // publicHtmlUsersListPug reads file data from disk. It returns an error on failure.
 func publicHtmlUsersListPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/users/list.pug"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/users/list.pug"
 	name := "public/html/users/list.pug"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1760,7 +1060,7 @@ func publicHtmlUsersListPug() (*asset, error) {
 
 // publicHtmlUsersUserHtml reads file data from disk. It returns an error on failure.
 func publicHtmlUsersUserHtml() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/users/user.html"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/users/user.html"
 	name := "public/html/users/user.html"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1778,8 +1078,728 @@ func publicHtmlUsersUserHtml() (*asset, error) {
 
 // publicHtmlUsersUserPug reads file data from disk. It returns an error on failure.
 func publicHtmlUsersUserPug() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/html/users/user.pug"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/users/user.pug"
 	name := "public/html/users/user.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsAddHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsAddHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/add.html"
+	name := "public/html/projects/add.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsAddPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsAddPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/add.pug"
+	name := "public/html/projects/add.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsContainerHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsContainerHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/container.html"
+	name := "public/html/projects/container.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsContainerPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsContainerPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/container.pug"
+	name := "public/html/projects/container.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsCreatetaskmodalHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsCreatetaskmodalHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/createTaskModal.html"
+	name := "public/html/projects/createTaskModal.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsCreatetaskmodalPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsCreatetaskmodalPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/createTaskModal.pug"
+	name := "public/html/projects/createTaskModal.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsDashboardHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsDashboardHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/dashboard.html"
+	name := "public/html/projects/dashboard.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsDashboardPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsDashboardPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/dashboard.pug"
+	name := "public/html/projects/dashboard.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsEditHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsEditHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/edit.html"
+	name := "public/html/projects/edit.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsEditPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsEditPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/edit.pug"
+	name := "public/html/projects/edit.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsScheduleHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsScheduleHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/schedule.html"
+	name := "public/html/projects/schedule.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsSchedulePug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsSchedulePug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/schedule.pug"
+	name := "public/html/projects/schedule.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsTaskmodalHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsTaskmodalHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/taskModal.html"
+	name := "public/html/projects/taskModal.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsTaskmodalPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsTaskmodalPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/taskModal.pug"
+	name := "public/html/projects/taskModal.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsEnvironmentAddHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsEnvironmentAddHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/environment/add.html"
+	name := "public/html/projects/environment/add.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsEnvironmentAddPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsEnvironmentAddPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/environment/add.pug"
+	name := "public/html/projects/environment/add.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsEnvironmentListHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsEnvironmentListHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/environment/list.html"
+	name := "public/html/projects/environment/list.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsEnvironmentListPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsEnvironmentListPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/environment/list.pug"
+	name := "public/html/projects/environment/list.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsTemplatesAddHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsTemplatesAddHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/templates/add.html"
+	name := "public/html/projects/templates/add.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsTemplatesAddPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsTemplatesAddPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/templates/add.pug"
+	name := "public/html/projects/templates/add.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsTemplatesListHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsTemplatesListHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/templates/list.html"
+	name := "public/html/projects/templates/list.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsTemplatesListPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsTemplatesListPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/templates/list.pug"
+	name := "public/html/projects/templates/list.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsInventoryAddHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsInventoryAddHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/inventory/add.html"
+	name := "public/html/projects/inventory/add.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsInventoryAddPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsInventoryAddPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/inventory/add.pug"
+	name := "public/html/projects/inventory/add.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsInventoryEditHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsInventoryEditHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/inventory/edit.html"
+	name := "public/html/projects/inventory/edit.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsInventoryEditPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsInventoryEditPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/inventory/edit.pug"
+	name := "public/html/projects/inventory/edit.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsInventoryListHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsInventoryListHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/inventory/list.html"
+	name := "public/html/projects/inventory/list.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsInventoryListPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsInventoryListPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/inventory/list.pug"
+	name := "public/html/projects/inventory/list.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsUsersAddHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsUsersAddHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/users/add.html"
+	name := "public/html/projects/users/add.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsUsersAddPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsUsersAddPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/users/add.pug"
+	name := "public/html/projects/users/add.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsUsersListHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsUsersListHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/users/list.html"
+	name := "public/html/projects/users/list.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsUsersListPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsUsersListPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/users/list.pug"
+	name := "public/html/projects/users/list.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsKeysAddHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsKeysAddHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/keys/add.html"
+	name := "public/html/projects/keys/add.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsKeysAddPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsKeysAddPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/keys/add.pug"
+	name := "public/html/projects/keys/add.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsKeysListHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsKeysListHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/keys/list.html"
+	name := "public/html/projects/keys/list.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsKeysListPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsKeysListPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/keys/list.pug"
+	name := "public/html/projects/keys/list.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsRepositoriesAddHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsRepositoriesAddHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/repositories/add.html"
+	name := "public/html/projects/repositories/add.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsRepositoriesAddPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsRepositoriesAddPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/repositories/add.pug"
+	name := "public/html/projects/repositories/add.pug"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsRepositoriesListHtml reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsRepositoriesListHtml() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/repositories/list.html"
+	name := "public/html/projects/repositories/list.html"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicHtmlProjectsRepositoriesListPug reads file data from disk. It returns an error on failure.
+func publicHtmlProjectsRepositoriesListPug() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/html/projects/repositories/list.pug"
+	name := "public/html/projects/repositories/list.pug"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
 		return nil, err
@@ -1796,7 +1816,7 @@ func publicHtmlUsersUserPug() (*asset, error) {
 
 // publicImgIconPng reads file data from disk. It returns an error on failure.
 func publicImgIconPng() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/img/icon.png"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/img/icon.png"
 	name := "public/img/icon.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1814,7 +1834,7 @@ func publicImgIconPng() (*asset, error) {
 
 // publicImgLogoPng reads file data from disk. It returns an error on failure.
 func publicImgLogoPng() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/img/logo.png"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/img/logo.png"
 	name := "public/img/logo.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1832,7 +1852,7 @@ func publicImgLogoPng() (*asset, error) {
 
 // publicImgScreenshotPng reads file data from disk. It returns an error on failure.
 func publicImgScreenshotPng() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/img/screenshot.png"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/img/screenshot.png"
 	name := "public/img/screenshot.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1850,7 +1870,7 @@ func publicImgScreenshotPng() (*asset, error) {
 
 // publicJsAppJs reads file data from disk. It returns an error on failure.
 func publicJsAppJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/app.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/app.js"
 	name := "public/js/app.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1868,440 +1888,8 @@ func publicJsAppJs() (*asset, error) {
 
 // publicJsBundleJs reads file data from disk. It returns an error on failure.
 func publicJsBundleJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/bundle.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/bundle.js"
 	name := "public/js/bundle.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersAdminJs reads file data from disk. It returns an error on failure.
-func publicJsControllersAdminJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/admin.js"
-	name := "public/js/controllers/admin.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersDashboardJs reads file data from disk. It returns an error on failure.
-func publicJsControllersDashboardJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/dashboard.js"
-	name := "public/js/controllers/dashboard.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersLoginJs reads file data from disk. It returns an error on failure.
-func publicJsControllersLoginJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/login.js"
-	name := "public/js/controllers/login.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersTasksJs reads file data from disk. It returns an error on failure.
-func publicJsControllersTasksJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/tasks.js"
-	name := "public/js/controllers/tasks.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersUserJs reads file data from disk. It returns an error on failure.
-func publicJsControllersUserJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/user.js"
-	name := "public/js/controllers/user.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersUsersJs reads file data from disk. It returns an error on failure.
-func publicJsControllersUsersJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/users.js"
-	name := "public/js/controllers/users.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersProjectsDashboardJs reads file data from disk. It returns an error on failure.
-func publicJsControllersProjectsDashboardJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/dashboard.js"
-	name := "public/js/controllers/projects/dashboard.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersProjectsEditJs reads file data from disk. It returns an error on failure.
-func publicJsControllersProjectsEditJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/edit.js"
-	name := "public/js/controllers/projects/edit.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersProjectsEnvironmentJs reads file data from disk. It returns an error on failure.
-func publicJsControllersProjectsEnvironmentJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/environment.js"
-	name := "public/js/controllers/projects/environment.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersProjectsInventoryJs reads file data from disk. It returns an error on failure.
-func publicJsControllersProjectsInventoryJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/inventory.js"
-	name := "public/js/controllers/projects/inventory.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersProjectsKeysJs reads file data from disk. It returns an error on failure.
-func publicJsControllersProjectsKeysJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/keys.js"
-	name := "public/js/controllers/projects/keys.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersProjectsRepositoriesJs reads file data from disk. It returns an error on failure.
-func publicJsControllersProjectsRepositoriesJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/repositories.js"
-	name := "public/js/controllers/projects/repositories.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersProjectsScheduleJs reads file data from disk. It returns an error on failure.
-func publicJsControllersProjectsScheduleJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/schedule.js"
-	name := "public/js/controllers/projects/schedule.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersProjectsTaskrunnerJs reads file data from disk. It returns an error on failure.
-func publicJsControllersProjectsTaskrunnerJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/taskRunner.js"
-	name := "public/js/controllers/projects/taskRunner.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersProjectsTemplatesJs reads file data from disk. It returns an error on failure.
-func publicJsControllersProjectsTemplatesJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/templates.js"
-	name := "public/js/controllers/projects/templates.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsControllersProjectsUsersJs reads file data from disk. It returns an error on failure.
-func publicJsControllersProjectsUsersJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/users.js"
-	name := "public/js/controllers/projects/users.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsFactoriesHostJs reads file data from disk. It returns an error on failure.
-func publicJsFactoriesHostJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/factories/host.js"
-	name := "public/js/factories/host.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsFactoriesHostgroupJs reads file data from disk. It returns an error on failure.
-func publicJsFactoriesHostgroupJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/factories/hostgroup.js"
-	name := "public/js/factories/hostgroup.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsFactoriesIdentityJs reads file data from disk. It returns an error on failure.
-func publicJsFactoriesIdentityJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/factories/identity.js"
-	name := "public/js/factories/identity.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsFactoriesJobJs reads file data from disk. It returns an error on failure.
-func publicJsFactoriesJobJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/factories/job.js"
-	name := "public/js/factories/job.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsFactoriesPlaybookJs reads file data from disk. It returns an error on failure.
-func publicJsFactoriesPlaybookJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/factories/playbook.js"
-	name := "public/js/factories/playbook.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsFactoriesProjectJs reads file data from disk. It returns an error on failure.
-func publicJsFactoriesProjectJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/factories/project.js"
-	name := "public/js/factories/project.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsFactoriesTaskJs reads file data from disk. It returns an error on failure.
-func publicJsFactoriesTaskJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/factories/task.js"
-	name := "public/js/factories/task.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicJsFactoriesUserJs reads file data from disk. It returns an error on failure.
-func publicJsFactoriesUserJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/factories/user.js"
-	name := "public/js/factories/user.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
 		return nil, err
@@ -2318,7 +1906,7 @@ func publicJsFactoriesUserJs() (*asset, error) {
 
 // publicJsRoutesAuthJs reads file data from disk. It returns an error on failure.
 func publicJsRoutesAuthJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/routes/auth.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/routes/auth.js"
 	name := "public/js/routes/auth.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2336,7 +1924,7 @@ func publicJsRoutesAuthJs() (*asset, error) {
 
 // publicJsRoutesProjectJs reads file data from disk. It returns an error on failure.
 func publicJsRoutesProjectJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/routes/project.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/routes/project.js"
 	name := "public/js/routes/project.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2354,8 +1942,296 @@ func publicJsRoutesProjectJs() (*asset, error) {
 
 // publicJsRoutesRouterJs reads file data from disk. It returns an error on failure.
 func publicJsRoutesRouterJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/routes/router.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/routes/router.js"
 	name := "public/js/routes/router.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersAdminJs reads file data from disk. It returns an error on failure.
+func publicJsControllersAdminJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/admin.js"
+	name := "public/js/controllers/admin.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersDashboardJs reads file data from disk. It returns an error on failure.
+func publicJsControllersDashboardJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/dashboard.js"
+	name := "public/js/controllers/dashboard.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersLoginJs reads file data from disk. It returns an error on failure.
+func publicJsControllersLoginJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/login.js"
+	name := "public/js/controllers/login.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersTasksJs reads file data from disk. It returns an error on failure.
+func publicJsControllersTasksJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/tasks.js"
+	name := "public/js/controllers/tasks.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersUserJs reads file data from disk. It returns an error on failure.
+func publicJsControllersUserJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/user.js"
+	name := "public/js/controllers/user.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersUsersJs reads file data from disk. It returns an error on failure.
+func publicJsControllersUsersJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/users.js"
+	name := "public/js/controllers/users.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersProjectsDashboardJs reads file data from disk. It returns an error on failure.
+func publicJsControllersProjectsDashboardJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/dashboard.js"
+	name := "public/js/controllers/projects/dashboard.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersProjectsEditJs reads file data from disk. It returns an error on failure.
+func publicJsControllersProjectsEditJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/edit.js"
+	name := "public/js/controllers/projects/edit.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersProjectsEnvironmentJs reads file data from disk. It returns an error on failure.
+func publicJsControllersProjectsEnvironmentJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/environment.js"
+	name := "public/js/controllers/projects/environment.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersProjectsInventoryJs reads file data from disk. It returns an error on failure.
+func publicJsControllersProjectsInventoryJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/inventory.js"
+	name := "public/js/controllers/projects/inventory.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersProjectsKeysJs reads file data from disk. It returns an error on failure.
+func publicJsControllersProjectsKeysJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/keys.js"
+	name := "public/js/controllers/projects/keys.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersProjectsRepositoriesJs reads file data from disk. It returns an error on failure.
+func publicJsControllersProjectsRepositoriesJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/repositories.js"
+	name := "public/js/controllers/projects/repositories.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersProjectsScheduleJs reads file data from disk. It returns an error on failure.
+func publicJsControllersProjectsScheduleJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/schedule.js"
+	name := "public/js/controllers/projects/schedule.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersProjectsTaskrunnerJs reads file data from disk. It returns an error on failure.
+func publicJsControllersProjectsTaskrunnerJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/taskRunner.js"
+	name := "public/js/controllers/projects/taskRunner.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersProjectsTemplatesJs reads file data from disk. It returns an error on failure.
+func publicJsControllersProjectsTemplatesJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/templates.js"
+	name := "public/js/controllers/projects/templates.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsControllersProjectsUsersJs reads file data from disk. It returns an error on failure.
+func publicJsControllersProjectsUsersJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/controllers/projects/users.js"
+	name := "public/js/controllers/projects/users.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
 		return nil, err
@@ -2372,7 +2248,7 @@ func publicJsRoutesRouterJs() (*asset, error) {
 
 // publicJsServicesHostgroupsJs reads file data from disk. It returns an error on failure.
 func publicJsServicesHostgroupsJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/services/hostgroups.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/services/hostgroups.js"
 	name := "public/js/services/hostgroups.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2390,7 +2266,7 @@ func publicJsServicesHostgroupsJs() (*asset, error) {
 
 // publicJsServicesIdentitiesJs reads file data from disk. It returns an error on failure.
 func publicJsServicesIdentitiesJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/services/identities.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/services/identities.js"
 	name := "public/js/services/identities.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2408,7 +2284,7 @@ func publicJsServicesIdentitiesJs() (*asset, error) {
 
 // publicJsServicesJobsJs reads file data from disk. It returns an error on failure.
 func publicJsServicesJobsJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/services/jobs.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/services/jobs.js"
 	name := "public/js/services/jobs.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2426,7 +2302,7 @@ func publicJsServicesJobsJs() (*asset, error) {
 
 // publicJsServicesPlaybooksJs reads file data from disk. It returns an error on failure.
 func publicJsServicesPlaybooksJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/services/playbooks.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/services/playbooks.js"
 	name := "public/js/services/playbooks.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2444,7 +2320,7 @@ func publicJsServicesPlaybooksJs() (*asset, error) {
 
 // publicJsServicesTasksJs reads file data from disk. It returns an error on failure.
 func publicJsServicesTasksJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/services/tasks.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/services/tasks.js"
 	name := "public/js/services/tasks.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2462,7 +2338,7 @@ func publicJsServicesTasksJs() (*asset, error) {
 
 // publicJsServicesUserJs reads file data from disk. It returns an error on failure.
 func publicJsServicesUserJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/services/user.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/services/user.js"
 	name := "public/js/services/user.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2480,8 +2356,152 @@ func publicJsServicesUserJs() (*asset, error) {
 
 // publicJsServicesUsersJs reads file data from disk. It returns an error on failure.
 func publicJsServicesUsersJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/js/services/users.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/services/users.js"
 	name := "public/js/services/users.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsFactoriesHostJs reads file data from disk. It returns an error on failure.
+func publicJsFactoriesHostJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/factories/host.js"
+	name := "public/js/factories/host.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsFactoriesHostgroupJs reads file data from disk. It returns an error on failure.
+func publicJsFactoriesHostgroupJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/factories/hostgroup.js"
+	name := "public/js/factories/hostgroup.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsFactoriesIdentityJs reads file data from disk. It returns an error on failure.
+func publicJsFactoriesIdentityJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/factories/identity.js"
+	name := "public/js/factories/identity.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsFactoriesJobJs reads file data from disk. It returns an error on failure.
+func publicJsFactoriesJobJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/factories/job.js"
+	name := "public/js/factories/job.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsFactoriesPlaybookJs reads file data from disk. It returns an error on failure.
+func publicJsFactoriesPlaybookJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/factories/playbook.js"
+	name := "public/js/factories/playbook.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsFactoriesProjectJs reads file data from disk. It returns an error on failure.
+func publicJsFactoriesProjectJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/factories/project.js"
+	name := "public/js/factories/project.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsFactoriesTaskJs reads file data from disk. It returns an error on failure.
+func publicJsFactoriesTaskJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/factories/task.js"
+	name := "public/js/factories/task.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicJsFactoriesUserJs reads file data from disk. It returns an error on failure.
+func publicJsFactoriesUserJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/js/factories/user.js"
+	name := "public/js/factories/user.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
 		return nil, err
@@ -2498,7 +2518,7 @@ func publicJsServicesUsersJs() (*asset, error) {
 
 // publicVendorGit reads file data from disk. It returns an error on failure.
 func publicVendorGit() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/.git"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/.git"
 	name := "public/vendor/.git"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2516,7 +2536,7 @@ func publicVendorGit() (*asset, error) {
 
 // publicVendorAngularCouchPotatoJs reads file data from disk. It returns an error on failure.
 func publicVendorAngularCouchPotatoJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/angular-couch-potato.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/angular-couch-potato.js"
 	name := "public/vendor/angular-couch-potato.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2534,7 +2554,7 @@ func publicVendorAngularCouchPotatoJs() (*asset, error) {
 
 // publicVendorAngularUiRouterMinJs reads file data from disk. It returns an error on failure.
 func publicVendorAngularUiRouterMinJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/angular-ui-router.min.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/angular-ui-router.min.js"
 	name := "public/vendor/angular-ui-router.min.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2552,7 +2572,7 @@ func publicVendorAngularUiRouterMinJs() (*asset, error) {
 
 // publicVendorAngularUiMinJs reads file data from disk. It returns an error on failure.
 func publicVendorAngularUiMinJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/angular-ui.min.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/angular-ui.min.js"
 	name := "public/vendor/angular-ui.min.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2570,7 +2590,7 @@ func publicVendorAngularUiMinJs() (*asset, error) {
 
 // publicVendorAngularMinJs reads file data from disk. It returns an error on failure.
 func publicVendorAngularMinJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/angular.min.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/angular.min.js"
 	name := "public/vendor/angular.min.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2588,7 +2608,7 @@ func publicVendorAngularMinJs() (*asset, error) {
 
 // publicVendorAsyncJs reads file data from disk. It returns an error on failure.
 func publicVendorAsyncJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/async.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/async.js"
 	name := "public/vendor/async.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2606,8 +2626,26 @@ func publicVendorAsyncJs() (*asset, error) {
 
 // publicVendorRequireMinJs reads file data from disk. It returns an error on failure.
 func publicVendorRequireMinJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/require.min.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/require.min.js"
 	name := "public/vendor/require.min.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorScrollglueJs reads file data from disk. It returns an error on failure.
+func publicVendorScrollglueJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/scrollglue.js"
+	name := "public/vendor/scrollglue.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
 		return nil, err
@@ -2624,7 +2662,7 @@ func publicVendorRequireMinJs() (*asset, error) {
 
 // publicVendorAngularLoadingBarLoadingBarCss reads file data from disk. It returns an error on failure.
 func publicVendorAngularLoadingBarLoadingBarCss() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/angular-loading-bar/loading-bar.css"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/angular-loading-bar/loading-bar.css"
 	name := "public/vendor/angular-loading-bar/loading-bar.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2642,7 +2680,7 @@ func publicVendorAngularLoadingBarLoadingBarCss() (*asset, error) {
 
 // publicVendorAngularLoadingBarLoadingBarJs reads file data from disk. It returns an error on failure.
 func publicVendorAngularLoadingBarLoadingBarJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/angular-loading-bar/loading-bar.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/angular-loading-bar/loading-bar.js"
 	name := "public/vendor/angular-loading-bar/loading-bar.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2660,2114 +2698,8 @@ func publicVendorAngularLoadingBarLoadingBarJs() (*asset, error) {
 
 // publicVendorAngularLoadingBarLoadingBarMinJs reads file data from disk. It returns an error on failure.
 func publicVendorAngularLoadingBarLoadingBarMinJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/angular-loading-bar/loading-bar.min.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/angular-loading-bar/loading-bar.min.js"
 	name := "public/vendor/angular-loading-bar/loading-bar.min.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapEditorconfig reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapEditorconfig() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/.editorconfig"
-	name := "public/vendor/bootstrap/.editorconfig"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapGitattributes reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapGitattributes() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/.gitattributes"
-	name := "public/vendor/bootstrap/.gitattributes"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapGitignore reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapGitignore() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/.gitignore"
-	name := "public/vendor/bootstrap/.gitignore"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapReadmeMd reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapReadmeMd() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/README.md"
-	name := "public/vendor/bootstrap/README.md"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapBowerJson reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapBowerJson() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/bower.json"
-	name := "public/vendor/bootstrap/bower.json"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapPackageJson reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapPackageJson() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/package.json"
-	name := "public/vendor/bootstrap/package.json"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistCssBootstrapThemeCss reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistCssBootstrapThemeCss() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/css/bootstrap-theme.css"
-	name := "public/vendor/bootstrap/dist/css/bootstrap-theme.css"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistCssBootstrapThemeCssMap reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistCssBootstrapThemeCssMap() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/css/bootstrap-theme.css.map"
-	name := "public/vendor/bootstrap/dist/css/bootstrap-theme.css.map"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistCssBootstrapThemeMinCss reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistCssBootstrapThemeMinCss() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/css/bootstrap-theme.min.css"
-	name := "public/vendor/bootstrap/dist/css/bootstrap-theme.min.css"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistCssBootstrapCss reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistCssBootstrapCss() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/css/bootstrap.css"
-	name := "public/vendor/bootstrap/dist/css/bootstrap.css"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistCssBootstrapCssMap reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistCssBootstrapCssMap() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/css/bootstrap.css.map"
-	name := "public/vendor/bootstrap/dist/css/bootstrap.css.map"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistCssBootstrapMinCss reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistCssBootstrapMinCss() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/css/bootstrap.min.css"
-	name := "public/vendor/bootstrap/dist/css/bootstrap.min.css"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularEot reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularEot() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.eot"
-	name := "public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.eot"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularSvg reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularSvg() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.svg"
-	name := "public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.svg"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularTtf reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularTtf() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf"
-	name := "public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularWoff reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularWoff() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"
-	name := "public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularWoff2 reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularWoff2() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"
-	name := "public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistJsBootstrapJs reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistJsBootstrapJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/js/bootstrap.js"
-	name := "public/vendor/bootstrap/dist/js/bootstrap.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistJsBootstrapMinJs reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistJsBootstrapMinJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/js/bootstrap.min.js"
-	name := "public/vendor/bootstrap/dist/js/bootstrap.min.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapDistJsNpmJs reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapDistJsNpmJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/js/npm.js"
-	name := "public/vendor/bootstrap/dist/js/npm.js"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapFontsGlyphiconsHalflingsRegularEot reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapFontsGlyphiconsHalflingsRegularEot() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot"
-	name := "public/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapFontsGlyphiconsHalflingsRegularSvg reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapFontsGlyphiconsHalflingsRegularSvg() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg"
-	name := "public/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapFontsGlyphiconsHalflingsRegularTtf reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapFontsGlyphiconsHalflingsRegularTtf() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf"
-	name := "public/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapFontsGlyphiconsHalflingsRegularWoff reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapFontsGlyphiconsHalflingsRegularWoff() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff"
-	name := "public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapFontsGlyphiconsHalflingsRegularWoff2 reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapFontsGlyphiconsHalflingsRegularWoff2() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2"
-	name := "public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessCsscombJson reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessCsscombJson() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/.csscomb.json"
-	name := "public/vendor/bootstrap/less/.csscomb.json"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessCsslintrc reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessCsslintrc() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/.csslintrc"
-	name := "public/vendor/bootstrap/less/.csslintrc"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessAlertsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessAlertsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/alerts.less"
-	name := "public/vendor/bootstrap/less/alerts.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessBadgesLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessBadgesLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/badges.less"
-	name := "public/vendor/bootstrap/less/badges.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessBootstrapLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessBootstrapLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/bootstrap.less"
-	name := "public/vendor/bootstrap/less/bootstrap.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessBreadcrumbsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessBreadcrumbsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/breadcrumbs.less"
-	name := "public/vendor/bootstrap/less/breadcrumbs.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessButtonGroupsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessButtonGroupsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/button-groups.less"
-	name := "public/vendor/bootstrap/less/button-groups.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessButtonsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessButtonsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/buttons.less"
-	name := "public/vendor/bootstrap/less/buttons.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessCarouselLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessCarouselLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/carousel.less"
-	name := "public/vendor/bootstrap/less/carousel.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessCloseLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessCloseLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/close.less"
-	name := "public/vendor/bootstrap/less/close.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessCodeLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessCodeLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/code.less"
-	name := "public/vendor/bootstrap/less/code.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessComponentAnimationsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessComponentAnimationsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/component-animations.less"
-	name := "public/vendor/bootstrap/less/component-animations.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessDropdownsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessDropdownsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/dropdowns.less"
-	name := "public/vendor/bootstrap/less/dropdowns.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessFormsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessFormsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/forms.less"
-	name := "public/vendor/bootstrap/less/forms.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessGlyphiconsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessGlyphiconsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/glyphicons.less"
-	name := "public/vendor/bootstrap/less/glyphicons.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessGridLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessGridLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/grid.less"
-	name := "public/vendor/bootstrap/less/grid.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessInputGroupsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessInputGroupsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/input-groups.less"
-	name := "public/vendor/bootstrap/less/input-groups.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessJumbotronLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessJumbotronLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/jumbotron.less"
-	name := "public/vendor/bootstrap/less/jumbotron.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessLabelsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessLabelsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/labels.less"
-	name := "public/vendor/bootstrap/less/labels.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessListGroupLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessListGroupLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/list-group.less"
-	name := "public/vendor/bootstrap/less/list-group.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMediaLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMediaLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/media.less"
-	name := "public/vendor/bootstrap/less/media.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins.less"
-	name := "public/vendor/bootstrap/less/mixins.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessModalsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessModalsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/modals.less"
-	name := "public/vendor/bootstrap/less/modals.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessNavbarLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessNavbarLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/navbar.less"
-	name := "public/vendor/bootstrap/less/navbar.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessNavsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessNavsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/navs.less"
-	name := "public/vendor/bootstrap/less/navs.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessNormalizeLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessNormalizeLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/normalize.less"
-	name := "public/vendor/bootstrap/less/normalize.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessPagerLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessPagerLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/pager.less"
-	name := "public/vendor/bootstrap/less/pager.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessPaginationLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessPaginationLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/pagination.less"
-	name := "public/vendor/bootstrap/less/pagination.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessPanelsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessPanelsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/panels.less"
-	name := "public/vendor/bootstrap/less/panels.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessPopoversLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessPopoversLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/popovers.less"
-	name := "public/vendor/bootstrap/less/popovers.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessPrintLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessPrintLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/print.less"
-	name := "public/vendor/bootstrap/less/print.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessProgressBarsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessProgressBarsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/progress-bars.less"
-	name := "public/vendor/bootstrap/less/progress-bars.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessResponsiveEmbedLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessResponsiveEmbedLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/responsive-embed.less"
-	name := "public/vendor/bootstrap/less/responsive-embed.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessResponsiveUtilitiesLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessResponsiveUtilitiesLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/responsive-utilities.less"
-	name := "public/vendor/bootstrap/less/responsive-utilities.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessScaffoldingLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessScaffoldingLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/scaffolding.less"
-	name := "public/vendor/bootstrap/less/scaffolding.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessTablesLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessTablesLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/tables.less"
-	name := "public/vendor/bootstrap/less/tables.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessThemeLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessThemeLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/theme.less"
-	name := "public/vendor/bootstrap/less/theme.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessThumbnailsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessThumbnailsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/thumbnails.less"
-	name := "public/vendor/bootstrap/less/thumbnails.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessTooltipLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessTooltipLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/tooltip.less"
-	name := "public/vendor/bootstrap/less/tooltip.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessTypeLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessTypeLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/type.less"
-	name := "public/vendor/bootstrap/less/type.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessUtilitiesLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessUtilitiesLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/utilities.less"
-	name := "public/vendor/bootstrap/less/utilities.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessVariablesLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessVariablesLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/variables.less"
-	name := "public/vendor/bootstrap/less/variables.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessWellsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessWellsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/wells.less"
-	name := "public/vendor/bootstrap/less/wells.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsAlertsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsAlertsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/alerts.less"
-	name := "public/vendor/bootstrap/less/mixins/alerts.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsBackgroundVariantLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsBackgroundVariantLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/background-variant.less"
-	name := "public/vendor/bootstrap/less/mixins/background-variant.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsBorderRadiusLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsBorderRadiusLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/border-radius.less"
-	name := "public/vendor/bootstrap/less/mixins/border-radius.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsButtonsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsButtonsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/buttons.less"
-	name := "public/vendor/bootstrap/less/mixins/buttons.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsCenterBlockLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsCenterBlockLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/center-block.less"
-	name := "public/vendor/bootstrap/less/mixins/center-block.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsClearfixLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsClearfixLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/clearfix.less"
-	name := "public/vendor/bootstrap/less/mixins/clearfix.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsFormsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsFormsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/forms.less"
-	name := "public/vendor/bootstrap/less/mixins/forms.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsGradientsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsGradientsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/gradients.less"
-	name := "public/vendor/bootstrap/less/mixins/gradients.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsGridFrameworkLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsGridFrameworkLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/grid-framework.less"
-	name := "public/vendor/bootstrap/less/mixins/grid-framework.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsGridLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsGridLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/grid.less"
-	name := "public/vendor/bootstrap/less/mixins/grid.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsHideTextLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsHideTextLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/hide-text.less"
-	name := "public/vendor/bootstrap/less/mixins/hide-text.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsImageLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsImageLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/image.less"
-	name := "public/vendor/bootstrap/less/mixins/image.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsLabelsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsLabelsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/labels.less"
-	name := "public/vendor/bootstrap/less/mixins/labels.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsListGroupLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsListGroupLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/list-group.less"
-	name := "public/vendor/bootstrap/less/mixins/list-group.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsNavDividerLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsNavDividerLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/nav-divider.less"
-	name := "public/vendor/bootstrap/less/mixins/nav-divider.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsNavVerticalAlignLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsNavVerticalAlignLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/nav-vertical-align.less"
-	name := "public/vendor/bootstrap/less/mixins/nav-vertical-align.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsOpacityLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsOpacityLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/opacity.less"
-	name := "public/vendor/bootstrap/less/mixins/opacity.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsPaginationLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsPaginationLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/pagination.less"
-	name := "public/vendor/bootstrap/less/mixins/pagination.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsPanelsLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsPanelsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/panels.less"
-	name := "public/vendor/bootstrap/less/mixins/panels.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsProgressBarLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsProgressBarLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/progress-bar.less"
-	name := "public/vendor/bootstrap/less/mixins/progress-bar.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsResetFilterLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsResetFilterLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/reset-filter.less"
-	name := "public/vendor/bootstrap/less/mixins/reset-filter.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsResetTextLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsResetTextLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/reset-text.less"
-	name := "public/vendor/bootstrap/less/mixins/reset-text.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsResizeLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsResizeLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/resize.less"
-	name := "public/vendor/bootstrap/less/mixins/resize.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsResponsiveVisibilityLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsResponsiveVisibilityLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/responsive-visibility.less"
-	name := "public/vendor/bootstrap/less/mixins/responsive-visibility.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsSizeLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsSizeLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/size.less"
-	name := "public/vendor/bootstrap/less/mixins/size.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsTabFocusLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsTabFocusLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/tab-focus.less"
-	name := "public/vendor/bootstrap/less/mixins/tab-focus.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsTableRowLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsTableRowLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/table-row.less"
-	name := "public/vendor/bootstrap/less/mixins/table-row.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsTextEmphasisLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsTextEmphasisLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/text-emphasis.less"
-	name := "public/vendor/bootstrap/less/mixins/text-emphasis.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsTextOverflowLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsTextOverflowLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/text-overflow.less"
-	name := "public/vendor/bootstrap/less/mixins/text-overflow.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorBootstrapLessMixinsVendorPrefixesLess reads file data from disk. It returns an error on failure.
-func publicVendorBootstrapLessMixinsVendorPrefixesLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/vendor-prefixes.less"
-	name := "public/vendor/bootstrap/less/mixins/vendor-prefixes.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeFontsFontawesomeOtf reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeFontsFontawesomeOtf() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/fonts/FontAwesome.otf"
-	name := "public/vendor/fontawesome/fonts/FontAwesome.otf"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeFontsFontawesomeWebfontEot reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeFontsFontawesomeWebfontEot() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/fonts/fontawesome-webfont.eot"
-	name := "public/vendor/fontawesome/fonts/fontawesome-webfont.eot"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeFontsFontawesomeWebfontSvg reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeFontsFontawesomeWebfontSvg() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/fonts/fontawesome-webfont.svg"
-	name := "public/vendor/fontawesome/fonts/fontawesome-webfont.svg"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeFontsFontawesomeWebfontTtf reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeFontsFontawesomeWebfontTtf() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/fonts/fontawesome-webfont.ttf"
-	name := "public/vendor/fontawesome/fonts/fontawesome-webfont.ttf"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeFontsFontawesomeWebfontWoff reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeFontsFontawesomeWebfontWoff() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/fonts/fontawesome-webfont.woff"
-	name := "public/vendor/fontawesome/fonts/fontawesome-webfont.woff"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeFontsFontawesomeWebfontWoff2 reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeFontsFontawesomeWebfontWoff2() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/fonts/fontawesome-webfont.woff2"
-	name := "public/vendor/fontawesome/fonts/fontawesome-webfont.woff2"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessAnimatedLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessAnimatedLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/animated.less"
-	name := "public/vendor/fontawesome/less/animated.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessBorderedPulledLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessBorderedPulledLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/bordered-pulled.less"
-	name := "public/vendor/fontawesome/less/bordered-pulled.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessCoreLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessCoreLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/core.less"
-	name := "public/vendor/fontawesome/less/core.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessFixedWidthLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessFixedWidthLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/fixed-width.less"
-	name := "public/vendor/fontawesome/less/fixed-width.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessFontAwesomeLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessFontAwesomeLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/font-awesome.less"
-	name := "public/vendor/fontawesome/less/font-awesome.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessIconsLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessIconsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/icons.less"
-	name := "public/vendor/fontawesome/less/icons.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessLargerLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessLargerLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/larger.less"
-	name := "public/vendor/fontawesome/less/larger.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessListLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessListLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/list.less"
-	name := "public/vendor/fontawesome/less/list.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessMixinsLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessMixinsLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/mixins.less"
-	name := "public/vendor/fontawesome/less/mixins.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessPathLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessPathLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/path.less"
-	name := "public/vendor/fontawesome/less/path.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessRotatedFlippedLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessRotatedFlippedLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/rotated-flipped.less"
-	name := "public/vendor/fontawesome/less/rotated-flipped.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessStackedLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessStackedLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/stacked.less"
-	name := "public/vendor/fontawesome/less/stacked.less"
-	bytes, err := bindataRead(path, name)
-	if err != nil {
-		return nil, err
-	}
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
-	}
-
-	a := &asset{bytes: bytes, info: fi}
-	return a, err
-}
-
-// publicVendorFontawesomeLessVariablesLess reads file data from disk. It returns an error on failure.
-func publicVendorFontawesomeLessVariablesLess() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/variables.less"
-	name := "public/vendor/fontawesome/less/variables.less"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
 		return nil, err
@@ -4784,7 +2716,7 @@ func publicVendorFontawesomeLessVariablesLess() (*asset, error) {
 
 // publicVendorMomentMomentTzJs reads file data from disk. It returns an error on failure.
 func publicVendorMomentMomentTzJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/moment/moment-tz.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/moment/moment-tz.js"
 	name := "public/vendor/moment/moment-tz.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4802,7 +2734,7 @@ func publicVendorMomentMomentTzJs() (*asset, error) {
 
 // publicVendorMomentMomentTzMinJs reads file data from disk. It returns an error on failure.
 func publicVendorMomentMomentTzMinJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/moment/moment-tz.min.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/moment/moment-tz.min.js"
 	name := "public/vendor/moment/moment-tz.min.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4820,7 +2752,7 @@ func publicVendorMomentMomentTzMinJs() (*asset, error) {
 
 // publicVendorMomentMomentJs reads file data from disk. It returns an error on failure.
 func publicVendorMomentMomentJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/moment/moment.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/moment/moment.js"
 	name := "public/vendor/moment/moment.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4838,8 +2770,2114 @@ func publicVendorMomentMomentJs() (*asset, error) {
 
 // publicVendorMomentMomentMinJs reads file data from disk. It returns an error on failure.
 func publicVendorMomentMomentMinJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/moment/moment.min.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/moment/moment.min.js"
 	name := "public/vendor/moment/moment.min.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapEditorconfig reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapEditorconfig() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/.editorconfig"
+	name := "public/vendor/bootstrap/.editorconfig"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapGitattributes reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapGitattributes() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/.gitattributes"
+	name := "public/vendor/bootstrap/.gitattributes"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapGitignore reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapGitignore() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/.gitignore"
+	name := "public/vendor/bootstrap/.gitignore"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapReadmeMd reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapReadmeMd() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/README.md"
+	name := "public/vendor/bootstrap/README.md"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapBowerJson reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapBowerJson() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/bower.json"
+	name := "public/vendor/bootstrap/bower.json"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapPackageJson reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapPackageJson() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/package.json"
+	name := "public/vendor/bootstrap/package.json"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessCsscombJson reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessCsscombJson() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/.csscomb.json"
+	name := "public/vendor/bootstrap/less/.csscomb.json"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessCsslintrc reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessCsslintrc() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/.csslintrc"
+	name := "public/vendor/bootstrap/less/.csslintrc"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessAlertsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessAlertsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/alerts.less"
+	name := "public/vendor/bootstrap/less/alerts.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessBadgesLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessBadgesLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/badges.less"
+	name := "public/vendor/bootstrap/less/badges.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessBootstrapLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessBootstrapLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/bootstrap.less"
+	name := "public/vendor/bootstrap/less/bootstrap.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessBreadcrumbsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessBreadcrumbsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/breadcrumbs.less"
+	name := "public/vendor/bootstrap/less/breadcrumbs.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessButtonGroupsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessButtonGroupsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/button-groups.less"
+	name := "public/vendor/bootstrap/less/button-groups.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessButtonsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessButtonsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/buttons.less"
+	name := "public/vendor/bootstrap/less/buttons.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessCarouselLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessCarouselLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/carousel.less"
+	name := "public/vendor/bootstrap/less/carousel.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessCloseLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessCloseLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/close.less"
+	name := "public/vendor/bootstrap/less/close.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessCodeLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessCodeLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/code.less"
+	name := "public/vendor/bootstrap/less/code.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessComponentAnimationsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessComponentAnimationsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/component-animations.less"
+	name := "public/vendor/bootstrap/less/component-animations.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessDropdownsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessDropdownsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/dropdowns.less"
+	name := "public/vendor/bootstrap/less/dropdowns.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessFormsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessFormsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/forms.less"
+	name := "public/vendor/bootstrap/less/forms.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessGlyphiconsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessGlyphiconsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/glyphicons.less"
+	name := "public/vendor/bootstrap/less/glyphicons.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessGridLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessGridLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/grid.less"
+	name := "public/vendor/bootstrap/less/grid.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessInputGroupsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessInputGroupsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/input-groups.less"
+	name := "public/vendor/bootstrap/less/input-groups.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessJumbotronLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessJumbotronLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/jumbotron.less"
+	name := "public/vendor/bootstrap/less/jumbotron.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessLabelsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessLabelsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/labels.less"
+	name := "public/vendor/bootstrap/less/labels.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessListGroupLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessListGroupLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/list-group.less"
+	name := "public/vendor/bootstrap/less/list-group.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMediaLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMediaLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/media.less"
+	name := "public/vendor/bootstrap/less/media.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins.less"
+	name := "public/vendor/bootstrap/less/mixins.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessModalsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessModalsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/modals.less"
+	name := "public/vendor/bootstrap/less/modals.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessNavbarLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessNavbarLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/navbar.less"
+	name := "public/vendor/bootstrap/less/navbar.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessNavsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessNavsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/navs.less"
+	name := "public/vendor/bootstrap/less/navs.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessNormalizeLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessNormalizeLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/normalize.less"
+	name := "public/vendor/bootstrap/less/normalize.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessPagerLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessPagerLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/pager.less"
+	name := "public/vendor/bootstrap/less/pager.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessPaginationLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessPaginationLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/pagination.less"
+	name := "public/vendor/bootstrap/less/pagination.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessPanelsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessPanelsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/panels.less"
+	name := "public/vendor/bootstrap/less/panels.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessPopoversLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessPopoversLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/popovers.less"
+	name := "public/vendor/bootstrap/less/popovers.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessPrintLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessPrintLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/print.less"
+	name := "public/vendor/bootstrap/less/print.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessProgressBarsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessProgressBarsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/progress-bars.less"
+	name := "public/vendor/bootstrap/less/progress-bars.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessResponsiveEmbedLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessResponsiveEmbedLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/responsive-embed.less"
+	name := "public/vendor/bootstrap/less/responsive-embed.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessResponsiveUtilitiesLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessResponsiveUtilitiesLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/responsive-utilities.less"
+	name := "public/vendor/bootstrap/less/responsive-utilities.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessScaffoldingLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessScaffoldingLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/scaffolding.less"
+	name := "public/vendor/bootstrap/less/scaffolding.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessTablesLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessTablesLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/tables.less"
+	name := "public/vendor/bootstrap/less/tables.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessThemeLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessThemeLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/theme.less"
+	name := "public/vendor/bootstrap/less/theme.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessThumbnailsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessThumbnailsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/thumbnails.less"
+	name := "public/vendor/bootstrap/less/thumbnails.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessTooltipLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessTooltipLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/tooltip.less"
+	name := "public/vendor/bootstrap/less/tooltip.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessTypeLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessTypeLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/type.less"
+	name := "public/vendor/bootstrap/less/type.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessUtilitiesLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessUtilitiesLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/utilities.less"
+	name := "public/vendor/bootstrap/less/utilities.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessVariablesLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessVariablesLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/variables.less"
+	name := "public/vendor/bootstrap/less/variables.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessWellsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessWellsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/wells.less"
+	name := "public/vendor/bootstrap/less/wells.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsAlertsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsAlertsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/alerts.less"
+	name := "public/vendor/bootstrap/less/mixins/alerts.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsBackgroundVariantLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsBackgroundVariantLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/background-variant.less"
+	name := "public/vendor/bootstrap/less/mixins/background-variant.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsBorderRadiusLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsBorderRadiusLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/border-radius.less"
+	name := "public/vendor/bootstrap/less/mixins/border-radius.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsButtonsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsButtonsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/buttons.less"
+	name := "public/vendor/bootstrap/less/mixins/buttons.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsCenterBlockLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsCenterBlockLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/center-block.less"
+	name := "public/vendor/bootstrap/less/mixins/center-block.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsClearfixLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsClearfixLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/clearfix.less"
+	name := "public/vendor/bootstrap/less/mixins/clearfix.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsFormsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsFormsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/forms.less"
+	name := "public/vendor/bootstrap/less/mixins/forms.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsGradientsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsGradientsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/gradients.less"
+	name := "public/vendor/bootstrap/less/mixins/gradients.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsGridFrameworkLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsGridFrameworkLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/grid-framework.less"
+	name := "public/vendor/bootstrap/less/mixins/grid-framework.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsGridLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsGridLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/grid.less"
+	name := "public/vendor/bootstrap/less/mixins/grid.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsHideTextLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsHideTextLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/hide-text.less"
+	name := "public/vendor/bootstrap/less/mixins/hide-text.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsImageLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsImageLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/image.less"
+	name := "public/vendor/bootstrap/less/mixins/image.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsLabelsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsLabelsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/labels.less"
+	name := "public/vendor/bootstrap/less/mixins/labels.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsListGroupLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsListGroupLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/list-group.less"
+	name := "public/vendor/bootstrap/less/mixins/list-group.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsNavDividerLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsNavDividerLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/nav-divider.less"
+	name := "public/vendor/bootstrap/less/mixins/nav-divider.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsNavVerticalAlignLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsNavVerticalAlignLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/nav-vertical-align.less"
+	name := "public/vendor/bootstrap/less/mixins/nav-vertical-align.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsOpacityLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsOpacityLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/opacity.less"
+	name := "public/vendor/bootstrap/less/mixins/opacity.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsPaginationLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsPaginationLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/pagination.less"
+	name := "public/vendor/bootstrap/less/mixins/pagination.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsPanelsLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsPanelsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/panels.less"
+	name := "public/vendor/bootstrap/less/mixins/panels.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsProgressBarLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsProgressBarLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/progress-bar.less"
+	name := "public/vendor/bootstrap/less/mixins/progress-bar.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsResetFilterLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsResetFilterLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/reset-filter.less"
+	name := "public/vendor/bootstrap/less/mixins/reset-filter.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsResetTextLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsResetTextLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/reset-text.less"
+	name := "public/vendor/bootstrap/less/mixins/reset-text.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsResizeLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsResizeLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/resize.less"
+	name := "public/vendor/bootstrap/less/mixins/resize.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsResponsiveVisibilityLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsResponsiveVisibilityLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/responsive-visibility.less"
+	name := "public/vendor/bootstrap/less/mixins/responsive-visibility.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsSizeLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsSizeLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/size.less"
+	name := "public/vendor/bootstrap/less/mixins/size.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsTabFocusLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsTabFocusLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/tab-focus.less"
+	name := "public/vendor/bootstrap/less/mixins/tab-focus.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsTableRowLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsTableRowLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/table-row.less"
+	name := "public/vendor/bootstrap/less/mixins/table-row.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsTextEmphasisLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsTextEmphasisLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/text-emphasis.less"
+	name := "public/vendor/bootstrap/less/mixins/text-emphasis.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsTextOverflowLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsTextOverflowLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/text-overflow.less"
+	name := "public/vendor/bootstrap/less/mixins/text-overflow.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapLessMixinsVendorPrefixesLess reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapLessMixinsVendorPrefixesLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/less/mixins/vendor-prefixes.less"
+	name := "public/vendor/bootstrap/less/mixins/vendor-prefixes.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistCssBootstrapThemeCss reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistCssBootstrapThemeCss() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/css/bootstrap-theme.css"
+	name := "public/vendor/bootstrap/dist/css/bootstrap-theme.css"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistCssBootstrapThemeCssMap reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistCssBootstrapThemeCssMap() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/css/bootstrap-theme.css.map"
+	name := "public/vendor/bootstrap/dist/css/bootstrap-theme.css.map"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistCssBootstrapThemeMinCss reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistCssBootstrapThemeMinCss() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/css/bootstrap-theme.min.css"
+	name := "public/vendor/bootstrap/dist/css/bootstrap-theme.min.css"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistCssBootstrapCss reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistCssBootstrapCss() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/css/bootstrap.css"
+	name := "public/vendor/bootstrap/dist/css/bootstrap.css"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistCssBootstrapCssMap reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistCssBootstrapCssMap() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/css/bootstrap.css.map"
+	name := "public/vendor/bootstrap/dist/css/bootstrap.css.map"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistCssBootstrapMinCss reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistCssBootstrapMinCss() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/css/bootstrap.min.css"
+	name := "public/vendor/bootstrap/dist/css/bootstrap.min.css"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularEot reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularEot() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.eot"
+	name := "public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.eot"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularSvg reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularSvg() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.svg"
+	name := "public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.svg"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularTtf reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularTtf() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf"
+	name := "public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularWoff reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularWoff() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"
+	name := "public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularWoff2 reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularWoff2() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"
+	name := "public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistJsBootstrapJs reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistJsBootstrapJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/js/bootstrap.js"
+	name := "public/vendor/bootstrap/dist/js/bootstrap.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistJsBootstrapMinJs reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistJsBootstrapMinJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/js/bootstrap.min.js"
+	name := "public/vendor/bootstrap/dist/js/bootstrap.min.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapDistJsNpmJs reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapDistJsNpmJs() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/dist/js/npm.js"
+	name := "public/vendor/bootstrap/dist/js/npm.js"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapFontsGlyphiconsHalflingsRegularEot reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapFontsGlyphiconsHalflingsRegularEot() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot"
+	name := "public/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapFontsGlyphiconsHalflingsRegularSvg reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapFontsGlyphiconsHalflingsRegularSvg() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg"
+	name := "public/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapFontsGlyphiconsHalflingsRegularTtf reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapFontsGlyphiconsHalflingsRegularTtf() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf"
+	name := "public/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapFontsGlyphiconsHalflingsRegularWoff reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapFontsGlyphiconsHalflingsRegularWoff() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff"
+	name := "public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorBootstrapFontsGlyphiconsHalflingsRegularWoff2 reads file data from disk. It returns an error on failure.
+func publicVendorBootstrapFontsGlyphiconsHalflingsRegularWoff2() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2"
+	name := "public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessAnimatedLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessAnimatedLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/animated.less"
+	name := "public/vendor/fontawesome/less/animated.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessBorderedPulledLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessBorderedPulledLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/bordered-pulled.less"
+	name := "public/vendor/fontawesome/less/bordered-pulled.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessCoreLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessCoreLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/core.less"
+	name := "public/vendor/fontawesome/less/core.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessFixedWidthLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessFixedWidthLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/fixed-width.less"
+	name := "public/vendor/fontawesome/less/fixed-width.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessFontAwesomeLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessFontAwesomeLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/font-awesome.less"
+	name := "public/vendor/fontawesome/less/font-awesome.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessIconsLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessIconsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/icons.less"
+	name := "public/vendor/fontawesome/less/icons.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessLargerLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessLargerLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/larger.less"
+	name := "public/vendor/fontawesome/less/larger.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessListLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessListLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/list.less"
+	name := "public/vendor/fontawesome/less/list.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessMixinsLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessMixinsLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/mixins.less"
+	name := "public/vendor/fontawesome/less/mixins.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessPathLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessPathLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/path.less"
+	name := "public/vendor/fontawesome/less/path.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessRotatedFlippedLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessRotatedFlippedLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/rotated-flipped.less"
+	name := "public/vendor/fontawesome/less/rotated-flipped.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessStackedLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessStackedLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/stacked.less"
+	name := "public/vendor/fontawesome/less/stacked.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeLessVariablesLess reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeLessVariablesLess() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/less/variables.less"
+	name := "public/vendor/fontawesome/less/variables.less"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeFontsFontawesomeOtf reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeFontsFontawesomeOtf() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/fonts/FontAwesome.otf"
+	name := "public/vendor/fontawesome/fonts/FontAwesome.otf"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeFontsFontawesomeWebfontEot reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeFontsFontawesomeWebfontEot() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/fonts/fontawesome-webfont.eot"
+	name := "public/vendor/fontawesome/fonts/fontawesome-webfont.eot"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeFontsFontawesomeWebfontSvg reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeFontsFontawesomeWebfontSvg() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/fonts/fontawesome-webfont.svg"
+	name := "public/vendor/fontawesome/fonts/fontawesome-webfont.svg"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeFontsFontawesomeWebfontTtf reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeFontsFontawesomeWebfontTtf() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/fonts/fontawesome-webfont.ttf"
+	name := "public/vendor/fontawesome/fonts/fontawesome-webfont.ttf"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeFontsFontawesomeWebfontWoff reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeFontsFontawesomeWebfontWoff() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/fonts/fontawesome-webfont.woff"
+	name := "public/vendor/fontawesome/fonts/fontawesome-webfont.woff"
+	bytes, err := bindataRead(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// publicVendorFontawesomeFontsFontawesomeWebfontWoff2 reads file data from disk. It returns an error on failure.
+func publicVendorFontawesomeFontsFontawesomeWebfontWoff2() (*asset, error) {
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/fontawesome/fonts/fontawesome-webfont.woff2"
+	name := "public/vendor/fontawesome/fonts/fontawesome-webfont.woff2"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
 		return nil, err
@@ -4856,7 +4894,7 @@ func publicVendorMomentMomentMinJs() (*asset, error) {
 
 // publicVendorSweetalertSweetalertCss reads file data from disk. It returns an error on failure.
 func publicVendorSweetalertSweetalertCss() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/sweetalert/sweetalert.css"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/sweetalert/sweetalert.css"
 	name := "public/vendor/sweetalert/sweetalert.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4874,7 +4912,7 @@ func publicVendorSweetalertSweetalertCss() (*asset, error) {
 
 // publicVendorSweetalertSweetalertMinJs reads file data from disk. It returns an error on failure.
 func publicVendorSweetalertSweetalertMinJs() (*asset, error) {
-	path := "/Users/fernandezvara/.gvm/pkgsets/go1.8/kis/src/github.com/ansible-semaphore/semaphore/public/vendor/sweetalert/sweetalert.min.js"
+	path := "/home/white/go/src/github.com/ansible-semaphore/semaphore/public/vendor/sweetalert/sweetalert.min.js"
 	name := "public/vendor/sweetalert/sweetalert.min.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4960,6 +4998,7 @@ var _bindata = map[string]func() (*asset, error){
 	"db/migrations/v2.3.1.sql": dbMigrationsV231Sql,
 	"db/migrations/v2.3.2.sql": dbMigrationsV232Sql,
 	"db/migrations/v2.4.0.sql": dbMigrationsV240Sql,
+	"db/migrations/v2.5.0.sql": dbMigrationsV250Sql,
 	"public/css/.gitignore": publicCssGitignore,
 	"public/css/login.less": publicCssLoginLess,
 	"public/css/octocat.less": publicCssOctocatLess,
@@ -4980,6 +5019,12 @@ var _bindata = map[string]func() (*asset, error){
 	"public/html/auth/login.pug": publicHtmlAuthLoginPug,
 	"public/html/auth/logout.html": publicHtmlAuthLogoutHtml,
 	"public/html/auth/logout.pug": publicHtmlAuthLogoutPug,
+	"public/html/users/add.html": publicHtmlUsersAddHtml,
+	"public/html/users/add.pug": publicHtmlUsersAddPug,
+	"public/html/users/list.html": publicHtmlUsersListHtml,
+	"public/html/users/list.pug": publicHtmlUsersListPug,
+	"public/html/users/user.html": publicHtmlUsersUserHtml,
+	"public/html/users/user.pug": publicHtmlUsersUserPug,
 	"public/html/projects/add.html": publicHtmlProjectsAddHtml,
 	"public/html/projects/add.pug": publicHtmlProjectsAddPug,
 	"public/html/projects/container.html": publicHtmlProjectsContainerHtml,
@@ -4998,12 +5043,20 @@ var _bindata = map[string]func() (*asset, error){
 	"public/html/projects/environment/add.pug": publicHtmlProjectsEnvironmentAddPug,
 	"public/html/projects/environment/list.html": publicHtmlProjectsEnvironmentListHtml,
 	"public/html/projects/environment/list.pug": publicHtmlProjectsEnvironmentListPug,
+	"public/html/projects/templates/add.html": publicHtmlProjectsTemplatesAddHtml,
+	"public/html/projects/templates/add.pug": publicHtmlProjectsTemplatesAddPug,
+	"public/html/projects/templates/list.html": publicHtmlProjectsTemplatesListHtml,
+	"public/html/projects/templates/list.pug": publicHtmlProjectsTemplatesListPug,
 	"public/html/projects/inventory/add.html": publicHtmlProjectsInventoryAddHtml,
 	"public/html/projects/inventory/add.pug": publicHtmlProjectsInventoryAddPug,
 	"public/html/projects/inventory/edit.html": publicHtmlProjectsInventoryEditHtml,
 	"public/html/projects/inventory/edit.pug": publicHtmlProjectsInventoryEditPug,
 	"public/html/projects/inventory/list.html": publicHtmlProjectsInventoryListHtml,
 	"public/html/projects/inventory/list.pug": publicHtmlProjectsInventoryListPug,
+	"public/html/projects/users/add.html": publicHtmlProjectsUsersAddHtml,
+	"public/html/projects/users/add.pug": publicHtmlProjectsUsersAddPug,
+	"public/html/projects/users/list.html": publicHtmlProjectsUsersListHtml,
+	"public/html/projects/users/list.pug": publicHtmlProjectsUsersListPug,
 	"public/html/projects/keys/add.html": publicHtmlProjectsKeysAddHtml,
 	"public/html/projects/keys/add.pug": publicHtmlProjectsKeysAddPug,
 	"public/html/projects/keys/list.html": publicHtmlProjectsKeysListHtml,
@@ -5012,25 +5065,14 @@ var _bindata = map[string]func() (*asset, error){
 	"public/html/projects/repositories/add.pug": publicHtmlProjectsRepositoriesAddPug,
 	"public/html/projects/repositories/list.html": publicHtmlProjectsRepositoriesListHtml,
 	"public/html/projects/repositories/list.pug": publicHtmlProjectsRepositoriesListPug,
-	"public/html/projects/templates/add.html": publicHtmlProjectsTemplatesAddHtml,
-	"public/html/projects/templates/add.pug": publicHtmlProjectsTemplatesAddPug,
-	"public/html/projects/templates/list.html": publicHtmlProjectsTemplatesListHtml,
-	"public/html/projects/templates/list.pug": publicHtmlProjectsTemplatesListPug,
-	"public/html/projects/users/add.html": publicHtmlProjectsUsersAddHtml,
-	"public/html/projects/users/add.pug": publicHtmlProjectsUsersAddPug,
-	"public/html/projects/users/list.html": publicHtmlProjectsUsersListHtml,
-	"public/html/projects/users/list.pug": publicHtmlProjectsUsersListPug,
-	"public/html/users/add.html": publicHtmlUsersAddHtml,
-	"public/html/users/add.pug": publicHtmlUsersAddPug,
-	"public/html/users/list.html": publicHtmlUsersListHtml,
-	"public/html/users/list.pug": publicHtmlUsersListPug,
-	"public/html/users/user.html": publicHtmlUsersUserHtml,
-	"public/html/users/user.pug": publicHtmlUsersUserPug,
 	"public/img/icon.png": publicImgIconPng,
 	"public/img/logo.png": publicImgLogoPng,
 	"public/img/screenshot.png": publicImgScreenshotPng,
 	"public/js/app.js": publicJsAppJs,
 	"public/js/bundle.js": publicJsBundleJs,
+	"public/js/routes/auth.js": publicJsRoutesAuthJs,
+	"public/js/routes/project.js": publicJsRoutesProjectJs,
+	"public/js/routes/router.js": publicJsRoutesRouterJs,
 	"public/js/controllers/admin.js": publicJsControllersAdminJs,
 	"public/js/controllers/dashboard.js": publicJsControllersDashboardJs,
 	"public/js/controllers/login.js": publicJsControllersLoginJs,
@@ -5047,6 +5089,13 @@ var _bindata = map[string]func() (*asset, error){
 	"public/js/controllers/projects/taskRunner.js": publicJsControllersProjectsTaskrunnerJs,
 	"public/js/controllers/projects/templates.js": publicJsControllersProjectsTemplatesJs,
 	"public/js/controllers/projects/users.js": publicJsControllersProjectsUsersJs,
+	"public/js/services/hostgroups.js": publicJsServicesHostgroupsJs,
+	"public/js/services/identities.js": publicJsServicesIdentitiesJs,
+	"public/js/services/jobs.js": publicJsServicesJobsJs,
+	"public/js/services/playbooks.js": publicJsServicesPlaybooksJs,
+	"public/js/services/tasks.js": publicJsServicesTasksJs,
+	"public/js/services/user.js": publicJsServicesUserJs,
+	"public/js/services/users.js": publicJsServicesUsersJs,
 	"public/js/factories/host.js": publicJsFactoriesHostJs,
 	"public/js/factories/hostgroup.js": publicJsFactoriesHostgroupJs,
 	"public/js/factories/identity.js": publicJsFactoriesIdentityJs,
@@ -5055,16 +5104,6 @@ var _bindata = map[string]func() (*asset, error){
 	"public/js/factories/project.js": publicJsFactoriesProjectJs,
 	"public/js/factories/task.js": publicJsFactoriesTaskJs,
 	"public/js/factories/user.js": publicJsFactoriesUserJs,
-	"public/js/routes/auth.js": publicJsRoutesAuthJs,
-	"public/js/routes/project.js": publicJsRoutesProjectJs,
-	"public/js/routes/router.js": publicJsRoutesRouterJs,
-	"public/js/services/hostgroups.js": publicJsServicesHostgroupsJs,
-	"public/js/services/identities.js": publicJsServicesIdentitiesJs,
-	"public/js/services/jobs.js": publicJsServicesJobsJs,
-	"public/js/services/playbooks.js": publicJsServicesPlaybooksJs,
-	"public/js/services/tasks.js": publicJsServicesTasksJs,
-	"public/js/services/user.js": publicJsServicesUserJs,
-	"public/js/services/users.js": publicJsServicesUsersJs,
 	"public/vendor/.git": publicVendorGit,
 	"public/vendor/angular-couch-potato.js": publicVendorAngularCouchPotatoJs,
 	"public/vendor/angular-ui-router.min.js": publicVendorAngularUiRouterMinJs,
@@ -5072,34 +5111,20 @@ var _bindata = map[string]func() (*asset, error){
 	"public/vendor/angular.min.js": publicVendorAngularMinJs,
 	"public/vendor/async.js": publicVendorAsyncJs,
 	"public/vendor/require.min.js": publicVendorRequireMinJs,
+	"public/vendor/scrollglue.js": publicVendorScrollglueJs,
 	"public/vendor/angular-loading-bar/loading-bar.css": publicVendorAngularLoadingBarLoadingBarCss,
 	"public/vendor/angular-loading-bar/loading-bar.js": publicVendorAngularLoadingBarLoadingBarJs,
 	"public/vendor/angular-loading-bar/loading-bar.min.js": publicVendorAngularLoadingBarLoadingBarMinJs,
+	"public/vendor/moment/moment-tz.js": publicVendorMomentMomentTzJs,
+	"public/vendor/moment/moment-tz.min.js": publicVendorMomentMomentTzMinJs,
+	"public/vendor/moment/moment.js": publicVendorMomentMomentJs,
+	"public/vendor/moment/moment.min.js": publicVendorMomentMomentMinJs,
 	"public/vendor/bootstrap/.editorconfig": publicVendorBootstrapEditorconfig,
 	"public/vendor/bootstrap/.gitattributes": publicVendorBootstrapGitattributes,
 	"public/vendor/bootstrap/.gitignore": publicVendorBootstrapGitignore,
 	"public/vendor/bootstrap/README.md": publicVendorBootstrapReadmeMd,
 	"public/vendor/bootstrap/bower.json": publicVendorBootstrapBowerJson,
 	"public/vendor/bootstrap/package.json": publicVendorBootstrapPackageJson,
-	"public/vendor/bootstrap/dist/css/bootstrap-theme.css": publicVendorBootstrapDistCssBootstrapThemeCss,
-	"public/vendor/bootstrap/dist/css/bootstrap-theme.css.map": publicVendorBootstrapDistCssBootstrapThemeCssMap,
-	"public/vendor/bootstrap/dist/css/bootstrap-theme.min.css": publicVendorBootstrapDistCssBootstrapThemeMinCss,
-	"public/vendor/bootstrap/dist/css/bootstrap.css": publicVendorBootstrapDistCssBootstrapCss,
-	"public/vendor/bootstrap/dist/css/bootstrap.css.map": publicVendorBootstrapDistCssBootstrapCssMap,
-	"public/vendor/bootstrap/dist/css/bootstrap.min.css": publicVendorBootstrapDistCssBootstrapMinCss,
-	"public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.eot": publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularEot,
-	"public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.svg": publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularSvg,
-	"public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf": publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularTtf,
-	"public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff": publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularWoff,
-	"public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2": publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularWoff2,
-	"public/vendor/bootstrap/dist/js/bootstrap.js": publicVendorBootstrapDistJsBootstrapJs,
-	"public/vendor/bootstrap/dist/js/bootstrap.min.js": publicVendorBootstrapDistJsBootstrapMinJs,
-	"public/vendor/bootstrap/dist/js/npm.js": publicVendorBootstrapDistJsNpmJs,
-	"public/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot": publicVendorBootstrapFontsGlyphiconsHalflingsRegularEot,
-	"public/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg": publicVendorBootstrapFontsGlyphiconsHalflingsRegularSvg,
-	"public/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf": publicVendorBootstrapFontsGlyphiconsHalflingsRegularTtf,
-	"public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff": publicVendorBootstrapFontsGlyphiconsHalflingsRegularWoff,
-	"public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2": publicVendorBootstrapFontsGlyphiconsHalflingsRegularWoff2,
 	"public/vendor/bootstrap/less/.csscomb.json": publicVendorBootstrapLessCsscombJson,
 	"public/vendor/bootstrap/less/.csslintrc": publicVendorBootstrapLessCsslintrc,
 	"public/vendor/bootstrap/less/alerts.less": publicVendorBootstrapLessAlertsLess,
@@ -5173,12 +5198,25 @@ var _bindata = map[string]func() (*asset, error){
 	"public/vendor/bootstrap/less/mixins/text-emphasis.less": publicVendorBootstrapLessMixinsTextEmphasisLess,
 	"public/vendor/bootstrap/less/mixins/text-overflow.less": publicVendorBootstrapLessMixinsTextOverflowLess,
 	"public/vendor/bootstrap/less/mixins/vendor-prefixes.less": publicVendorBootstrapLessMixinsVendorPrefixesLess,
-	"public/vendor/fontawesome/fonts/FontAwesome.otf": publicVendorFontawesomeFontsFontawesomeOtf,
-	"public/vendor/fontawesome/fonts/fontawesome-webfont.eot": publicVendorFontawesomeFontsFontawesomeWebfontEot,
-	"public/vendor/fontawesome/fonts/fontawesome-webfont.svg": publicVendorFontawesomeFontsFontawesomeWebfontSvg,
-	"public/vendor/fontawesome/fonts/fontawesome-webfont.ttf": publicVendorFontawesomeFontsFontawesomeWebfontTtf,
-	"public/vendor/fontawesome/fonts/fontawesome-webfont.woff": publicVendorFontawesomeFontsFontawesomeWebfontWoff,
-	"public/vendor/fontawesome/fonts/fontawesome-webfont.woff2": publicVendorFontawesomeFontsFontawesomeWebfontWoff2,
+	"public/vendor/bootstrap/dist/css/bootstrap-theme.css": publicVendorBootstrapDistCssBootstrapThemeCss,
+	"public/vendor/bootstrap/dist/css/bootstrap-theme.css.map": publicVendorBootstrapDistCssBootstrapThemeCssMap,
+	"public/vendor/bootstrap/dist/css/bootstrap-theme.min.css": publicVendorBootstrapDistCssBootstrapThemeMinCss,
+	"public/vendor/bootstrap/dist/css/bootstrap.css": publicVendorBootstrapDistCssBootstrapCss,
+	"public/vendor/bootstrap/dist/css/bootstrap.css.map": publicVendorBootstrapDistCssBootstrapCssMap,
+	"public/vendor/bootstrap/dist/css/bootstrap.min.css": publicVendorBootstrapDistCssBootstrapMinCss,
+	"public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.eot": publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularEot,
+	"public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.svg": publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularSvg,
+	"public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf": publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularTtf,
+	"public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff": publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularWoff,
+	"public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2": publicVendorBootstrapDistFontsGlyphiconsHalflingsRegularWoff2,
+	"public/vendor/bootstrap/dist/js/bootstrap.js": publicVendorBootstrapDistJsBootstrapJs,
+	"public/vendor/bootstrap/dist/js/bootstrap.min.js": publicVendorBootstrapDistJsBootstrapMinJs,
+	"public/vendor/bootstrap/dist/js/npm.js": publicVendorBootstrapDistJsNpmJs,
+	"public/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot": publicVendorBootstrapFontsGlyphiconsHalflingsRegularEot,
+	"public/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg": publicVendorBootstrapFontsGlyphiconsHalflingsRegularSvg,
+	"public/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf": publicVendorBootstrapFontsGlyphiconsHalflingsRegularTtf,
+	"public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff": publicVendorBootstrapFontsGlyphiconsHalflingsRegularWoff,
+	"public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2": publicVendorBootstrapFontsGlyphiconsHalflingsRegularWoff2,
 	"public/vendor/fontawesome/less/animated.less": publicVendorFontawesomeLessAnimatedLess,
 	"public/vendor/fontawesome/less/bordered-pulled.less": publicVendorFontawesomeLessBorderedPulledLess,
 	"public/vendor/fontawesome/less/core.less": publicVendorFontawesomeLessCoreLess,
@@ -5192,10 +5230,12 @@ var _bindata = map[string]func() (*asset, error){
 	"public/vendor/fontawesome/less/rotated-flipped.less": publicVendorFontawesomeLessRotatedFlippedLess,
 	"public/vendor/fontawesome/less/stacked.less": publicVendorFontawesomeLessStackedLess,
 	"public/vendor/fontawesome/less/variables.less": publicVendorFontawesomeLessVariablesLess,
-	"public/vendor/moment/moment-tz.js": publicVendorMomentMomentTzJs,
-	"public/vendor/moment/moment-tz.min.js": publicVendorMomentMomentTzMinJs,
-	"public/vendor/moment/moment.js": publicVendorMomentMomentJs,
-	"public/vendor/moment/moment.min.js": publicVendorMomentMomentMinJs,
+	"public/vendor/fontawesome/fonts/FontAwesome.otf": publicVendorFontawesomeFontsFontawesomeOtf,
+	"public/vendor/fontawesome/fonts/fontawesome-webfont.eot": publicVendorFontawesomeFontsFontawesomeWebfontEot,
+	"public/vendor/fontawesome/fonts/fontawesome-webfont.svg": publicVendorFontawesomeFontsFontawesomeWebfontSvg,
+	"public/vendor/fontawesome/fonts/fontawesome-webfont.ttf": publicVendorFontawesomeFontsFontawesomeWebfontTtf,
+	"public/vendor/fontawesome/fonts/fontawesome-webfont.woff": publicVendorFontawesomeFontsFontawesomeWebfontWoff,
+	"public/vendor/fontawesome/fonts/fontawesome-webfont.woff2": publicVendorFontawesomeFontsFontawesomeWebfontWoff2,
 	"public/vendor/sweetalert/sweetalert.css": publicVendorSweetalertSweetalertCss,
 	"public/vendor/sweetalert/sweetalert.min.js": publicVendorSweetalertSweetalertMinJs,
 }
@@ -5260,6 +5300,7 @@ var _bintree = &bintree{nil, map[string]*bintree{
 			"v2.3.1.sql": &bintree{dbMigrationsV231Sql, map[string]*bintree{}},
 			"v2.3.2.sql": &bintree{dbMigrationsV232Sql, map[string]*bintree{}},
 			"v2.4.0.sql": &bintree{dbMigrationsV240Sql, map[string]*bintree{}},
+			"v2.5.0.sql": &bintree{dbMigrationsV250Sql, map[string]*bintree{}},
 		}},
 	}},
 	"public": &bintree{nil, map[string]*bintree{
@@ -5562,6 +5603,7 @@ var _bintree = &bintree{nil, map[string]*bintree{
 				"moment.min.js": &bintree{publicVendorMomentMomentMinJs, map[string]*bintree{}},
 			}},
 			"require.min.js": &bintree{publicVendorRequireMinJs, map[string]*bintree{}},
+			"scrollglue.js": &bintree{publicVendorScrollglueJs, map[string]*bintree{}},
 			"sweetalert": &bintree{nil, map[string]*bintree{
 				"sweetalert.css": &bintree{publicVendorSweetalertSweetalertCss, map[string]*bintree{}},
 				"sweetalert.min.js": &bintree{publicVendorSweetalertSweetalertMinJs, map[string]*bintree{}},

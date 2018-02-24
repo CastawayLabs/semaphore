@@ -33,10 +33,16 @@ type task struct {
 }
 
 func (t *task) fail() {
+	var user db.User
 	t.task.Status = "error"
 	t.updateStatus()
 	t.sendMailAlert()
 	t.sendTelegramAlert()
+
+	t.fetch("User not found", &user, "select * from user where id=?", t.task.UserID)
+	util.UserVaultCache.DecrementUsage(user.Username)
+	t.RemoveVaultFiles()
+	t.RemoveUserVarFile()
 }
 
 func (t *task) prepareRun() {
@@ -44,10 +50,21 @@ func (t *task) prepareRun() {
 
 	defer func() {
 		fmt.Println("Stopped preparing task")
-
+		pool.running = 0
+		err := t.RemoveVaultFiles()
+		if err != nil {
+			t.log("Could not remove vault files")
+		}
+		err = t.RemoveUserVarFile()
+		if err != nil {
+			t.log("Could not remove user variables file")
+		}
+		now := time.Now()
+		t.task.End = &now
+		t.updateStatus()
 		objType := "task"
 		desc := "Task ID " + strconv.Itoa(t.task.ID) + " (" + t.template.Alias + ")" + " finished - " + strings.ToUpper(t.task.Status)
-		if err := (db.Event{
+		if err = (db.Event{
 			ProjectID:   &t.projectID,
 			ObjectType:  &objType,
 			ObjectID:    &t.task.ID,
@@ -165,6 +182,9 @@ func (t *task) run() {
 		t.fail()
 		return
 	}
+	var user db.User
+	t.fetch("User not found", &user, "select * from user where id=?", t.task.UserID)
+	util.UserVaultCache.DecrementUsage(user.Username)
 
 	t.task.Status = "success"
 	t.updateStatus()
@@ -218,10 +238,15 @@ func (t *task) populateDetails() error {
 	}
 
 	// get access key
-	if err := t.fetch("Template Access Key not found!", &t.sshKey, "select * from access_key where id=?", t.template.SshKeyID); err != nil {
-		return err
+	if t.template.UserKey == true {
+		if err := t.fetch("User SSH Key not found", &t.sshKey, "select * from access_key where project_id=? and owner =?", t.projectID, t.task.UserID); err != nil {
+			return err
+		}
+	} else {
+		if err := t.fetch("Template Access Key not found!", &t.sshKey, "select * from access_key where id=?", t.template.SshKeyID); err != nil {
+			return err
+		}
 	}
-
 	if t.sshKey.Type != "ssh" {
 		t.log("Non ssh-type keys are currently not supported: " + t.sshKey.Type)
 		return errors.New("Unsupported SSH Key")
@@ -384,7 +409,6 @@ func (t *task) getPlaybookArgs() ([]string, error) {
 	args := []string{
 		"-i", util.Config.TmpPath + "/inventory_" + strconv.Itoa(t.task.ID),
 	}
-
 	if t.inventory.SshKeyID != nil {
 		args = append(args, "--private-key="+t.inventory.SshKey.GetPath())
 	}
@@ -416,6 +440,24 @@ func (t *task) getPlaybookArgs() ([]string, error) {
 			return nil, err
 		}
 	}
+	if t.template.UserVars {
+		err := t.InstallUserVarFile()
+		if err != nil {
+			t.log("Could not write user vars file")
+			return nil, err
+		}
+		args = append(args, "--extra-vars", "@"+util.Config.TmpPath+"/user_vars_"+strconv.Itoa(t.task.ID))
+	}
+
+	if t.template.UserVault {
+		err := t.InstallVaultFiles()
+		if err != nil {
+			t.log("Could not write vault files")
+			return nil, err
+		}
+		args = append(args, "--vault-password-file", util.Config.TmpPath+"/vault_pass_"+strconv.Itoa(t.task.ID))
+		args = append(args, "--extra-vars", "@"+util.Config.TmpPath+"/vault_"+strconv.Itoa(t.task.ID))
+	}
 
 	if t.template.OverrideArguments {
 		args = extraArgs
@@ -436,6 +478,5 @@ func (t *task) envVars(home string, pwd string, gitSSHCommand *string) []string 
 	if gitSSHCommand != nil {
 		env = append(env, fmt.Sprintf("GIT_SSH_COMMAND=%s", *gitSSHCommand))
 	}
-
 	return env
 }
