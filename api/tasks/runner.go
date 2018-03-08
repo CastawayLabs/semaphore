@@ -9,7 +9,6 @@ import (
 	"os"
 	"os/exec"
 	"regexp"
-	"strconv"
 	"strings"
 	"time"
 
@@ -21,6 +20,7 @@ type task struct {
 	task        db.Task
 	template    db.Template
 	sshKey      db.AccessKey
+	vaultKey    db.AccessKey
 	inventory   db.Inventory
 	repository  db.Repository
 	environment db.Environment
@@ -33,10 +33,24 @@ type task struct {
 }
 
 func (t *task) fail() {
+	var user db.User
 	t.task.Status = "error"
 	t.updateStatus()
 	t.sendMailAlert()
 	t.sendTelegramAlert()
+
+	err := t.fetch("User not found", &user, "select * from user where id=?", t.task.UserID)
+	if err != nil {
+	    util.UserVaultCache.DecrementUsage(user.Username)
+	}
+	err = t.RemoveVaultFiles()
+	if err != nil {
+		t.log("Could not remove vault files")
+	}
+	t.RemoveUserVarFile()
+	if err != nil {
+		t.log("Could not remove user variables file")
+	}
 }
 
 func (t *task) prepareRun() {
@@ -44,10 +58,21 @@ func (t *task) prepareRun() {
 
 	defer func() {
 		fmt.Println("Stopped preparing task")
-
+		pool.running = 0
+		err := t.RemoveVaultFiles()
+		if err != nil {
+			t.log("Could not remove vault files")
+		}
+		err = t.RemoveUserVarFile()
+		if err != nil {
+			t.log("Could not remove user variables file")
+		}
+		now := time.Now()
+		t.task.End = &now
+		t.updateStatus()
 		objType := "task"
-		desc := "Task ID " + strconv.Itoa(t.task.ID) + " (" + t.template.Alias + ")" + " finished - " + strings.ToUpper(t.task.Status)
-		if err := (db.Event{
+		desc := fmt.Sprintf("Task ID %d (%s) finished - %s", t.task.ID, t.template.Alias, strings.ToUpper(t.task.Status))
+		if err = (db.Event{
 			ProjectID:   &t.projectID,
 			ObjectType:  &objType,
 			ObjectID:    &t.task.ID,
@@ -58,23 +83,23 @@ func (t *task) prepareRun() {
 		}
 	}()
 
-	t.log("Preparing: " + strconv.Itoa(t.task.ID))
+	t.log(fmt.Sprintf("Preparing: %d",t.task.ID))
 
 	err := checkTmpDir(util.Config.TmpPath)
 	if err != nil {
-		t.log("Creating tmp dir failed: " + err.Error())
+		t.log(fmt.Sprintf("Creating tmp dir failed: %v", err.Error()))
 		t.fail()
 		return
 	}
 
 	if err := t.populateDetails(); err != nil {
-		t.log("Error: " + err.Error())
+		t.log(fmt.Sprintf("Error: %v",err.Error()))
 		t.fail()
 		return
 	}
 
 	objType := "task"
-	desc := "Task ID " + strconv.Itoa(t.task.ID) + " (" + t.template.Alias + ")" + " is preparing"
+	desc := fmt.Sprintf("Task ID %d (%s) is preparing",t.task.ID, t.template.Alias)
 	if err := (db.Event{
 		ProjectID:   &t.projectID,
 		ObjectType:  &objType,
@@ -88,25 +113,34 @@ func (t *task) prepareRun() {
 	t.log("Prepare task with template: " + t.template.Alias + "\n")
 
 	if err := t.installKey(t.repository.SshKey); err != nil {
-		t.log("Failed installing ssh key for repository access: " + err.Error())
+		t.log(fmt.Sprintf("Failed installing ssh key for repository access: %v" , err.Error()))
 		t.fail()
 		return
 	}
 
+	// install vault key if vault_id != 0
+	if *t.template.VaultID != 0 {
+		if err := t.installVaultKey(t.vaultKey); err != nil {
+			t.log(fmt.Sprintf("Failed installing vault key for repository secrets: %v", err.Error()))
+			t.fail()
+			return
+		}
+	}
+
 	if err := t.updateRepository(); err != nil {
-		t.log("Failed updating repository: " + err.Error())
+		t.log(fmt.Sprintf("Failed updating repository: %v", err.Error()))
 		t.fail()
 		return
 	}
 
 	if err := t.installInventory(); err != nil {
-		t.log("Failed to install inventory: " + err.Error())
+		t.log(fmt.Sprintf("Failed to install inventory: %v", err.Error()))
 		t.fail()
 		return
 	}
 
 	if err := t.runGalaxy(); err != nil {
-		t.log("Running galaxy failed: " + err.Error())
+		t.log(fmt.Sprintf("Running galaxy failed: %v", err.Error()))
 		t.fail()
 		return
 	}
@@ -114,7 +148,7 @@ func (t *task) prepareRun() {
 	// todo: write environment
 
 	if err := t.listPlaybookHosts(); err != nil {
-		t.log("Listing playbook hosts failed: " + err.Error())
+		t.log(fmt.Sprintf("Listing playbook hosts failed: %v", err.Error()))
 		t.fail()
 		return
 	}
@@ -132,7 +166,7 @@ func (t *task) run() {
 		t.updateStatus()
 
 		objType := "task"
-		desc := "Task ID " + strconv.Itoa(t.task.ID) + " (" + t.template.Alias + ")" + " finished - " + strings.ToUpper(t.task.Status)
+		desc := fmt.Sprintf("Task ID %d (%s) finished - %s",t.task.ID, t.template.Alias, strings.ToUpper(t.task.Status))
 		if err := (db.Event{
 			ProjectID:   &t.projectID,
 			ObjectType:  &objType,
@@ -153,7 +187,7 @@ func (t *task) run() {
 	}
 
 	objType := "task"
-	desc := "Task ID " + strconv.Itoa(t.task.ID) + " (" + t.template.Alias + ")" + " is running"
+	desc := fmt.Sprintf("Task ID %d (%s) is running",t.task.ID, t.template.Alias)
 	if err := (db.Event{
 		ProjectID:   &t.projectID,
 		ObjectType:  &objType,
@@ -164,13 +198,20 @@ func (t *task) run() {
 		panic(err)
 	}
 
-	t.log("Started: " + strconv.Itoa(t.task.ID))
-	t.log("Run task with template: " + t.template.Alias + "\n")
+	t.log(fmt.Sprintf("Started: %d",t.task.ID))
+	t.log(fmt.Sprintf("Run task with template: %s", t.template.Alias))
 
 	if err := t.runPlaybook(); err != nil {
-		t.log("Running playbook failed: " + err.Error())
+		t.log(fmt.Sprintf("Running playbook failed: %v", err.Error()))
 		t.fail()
 		return
+	}
+	var user db.User
+	err := t.fetch("User not found", &user, "select * from user where id=?", t.task.UserID)
+	if err != nil {
+		t.log(fmt.Sprintf("Could not decrease usage count on credentials for %d",t.task.UserID))
+	} else {
+		util.UserVaultCache.DecrementUsage(user.Username)
 	}
 
 	t.task.Status = "success"
@@ -225,13 +266,30 @@ func (t *task) populateDetails() error {
 	}
 
 	// get access key
-	if err := t.fetch("Template Access Key not found!", &t.sshKey, "select * from access_key where id=?", t.template.SshKeyID); err != nil {
-		return err
+	if t.template.UserKey {
+		if err := t.fetch("User SSH Key not found", &t.sshKey, "select * from access_key where project_id=? and owner =?", t.projectID, t.task.UserID); err != nil {
+			return err
+		}
+	} else {
+		if err := t.fetch("Template Access Key not found!", &t.sshKey, "select * from access_key where id=?", t.template.SshKeyID); err != nil {
+			return err
+		}
+	}
+	if t.sshKey.Type != "ssh" {
+		t.log(fmt.Sprintf("Non ssh-type keys are currently not supported: %s" ,t.sshKey.Type))
+		return errors.New("Unsupported SSH Key")
 	}
 
-	if t.sshKey.Type != "ssh" {
-		t.log("Non ssh-type keys are currently not supported: " + t.sshKey.Type)
-		return errors.New("Unsupported SSH Key")
+	// get vault key if defined, else id == 0
+	if *t.template.VaultID != 0 {
+		if err := t.fetch("Template Vault Key not found!", &t.vaultKey, "select * from access_key where id=?", t.template.VaultID); err != nil {
+			return err
+		}
+
+		if t.vaultKey.Type != "vault" {
+			t.log(fmt.Sprintf("Non vault key, instead found: %s", t.vaultKey.Type))
+			return errors.New("Unsupported Vault Key")
+		}
 	}
 
 	// get inventory
@@ -263,7 +321,7 @@ func (t *task) populateDetails() error {
 		return err
 	}
 	if t.repository.SshKey.Type != "ssh" {
-		t.log("Repository Access Key is not 'SSH': " + t.repository.SshKey.Type)
+		t.log(fmt.Sprintf("Repository Access Key is not 'SSH': %s", t.repository.SshKey.Type))
 		return errors.New("Unsupported SSH Key")
 	}
 
@@ -281,7 +339,7 @@ func (t *task) populateDetails() error {
 }
 
 func (t *task) installKey(key db.AccessKey) error {
-	t.log("access key " + key.Name + " installed")
+	t.log(fmt.Sprintf("access key %s installed",key.Name))
 
 	path := key.GetPath()
 	if key.Key != nil {
@@ -293,8 +351,14 @@ func (t *task) installKey(key db.AccessKey) error {
 	return ioutil.WriteFile(path, []byte(*key.Secret), 0600)
 }
 
+func (t *task) installVaultKey(key db.AccessKey) error {
+	t.log("vault key '" + key.Name + "' installed")
+
+	return ioutil.WriteFile(key.GetPath(), []byte(*key.Secret), 0600)
+}
+
 func (t *task) updateRepository() error {
-	repoName := "repository_" + strconv.Itoa(t.repository.ID)
+	repoName := fmt.Sprintf("repository_%d", t.repository.ID)
 	_, err := os.Stat(util.Config.TmpPath + "/" + repoName)
 
 	cmd := exec.Command("git")
@@ -309,12 +373,12 @@ func (t *task) updateRepository() error {
 	}
 
 	if err != nil && os.IsNotExist(err) {
-		t.log("Cloning repository " + repoURL)
+		t.log(fmt.Sprintf("Cloning repository %s", repoURL))
 		cmd.Args = append(cmd.Args, "clone", "--recursive", "--branch", repoTag, repoURL, repoName)
 	} else if err != nil {
 		return err
 	} else {
-		t.log("Updating repository " + repoURL)
+		t.log(fmt.Sprintf("Updating repository ", repoURL))
 		cmd.Dir += "/" + repoName
 		cmd.Args = append(cmd.Args, "pull", "origin", repoTag)
 	}
@@ -334,7 +398,7 @@ func (t *task) runGalaxy() error {
 	}
 
 	cmd := exec.Command("ansible-galaxy", args...)
-	cmd.Dir = util.Config.TmpPath + "/repository_" + strconv.Itoa(t.repository.ID)
+	cmd.Dir = fmt.Sprintf("%s/repository_%d" ,util.Config.TmpPath,t.repository.ID)
 
 	gitSSHCommand := "ssh -o StrictHostKeyChecking=no -i " + t.repository.SshKey.GetPath()
 	cmd.Env = t.envVars(util.Config.TmpPath, cmd.Dir, &gitSSHCommand)
@@ -355,7 +419,7 @@ func (t *task) listPlaybookHosts() error {
 	args = append(args, "--list-hosts")
 
 	cmd := exec.Command("ansible-playbook", args...)
-	cmd.Dir = util.Config.TmpPath + "/repository_" + strconv.Itoa(t.repository.ID)
+	cmd.Dir = fmt.Sprintf("%s/repository_%d",util.Config.TmpPath, t.repository.ID)
 	cmd.Env = t.envVars(util.Config.TmpPath, cmd.Dir, nil)
 
 	out, err := cmd.Output()
@@ -375,7 +439,7 @@ func (t *task) runPlaybook() error {
 		return err
 	}
 	cmd := exec.Command("ansible-playbook", args...)
-	cmd.Dir = util.Config.TmpPath + "/repository_" + strconv.Itoa(t.repository.ID)
+	cmd.Dir = fmt.Sprintf("%s/repository_%d",util.Config.TmpPath,t.repository.ID)
 	cmd.Env = t.envVars(util.Config.TmpPath, cmd.Dir, nil)
 
 	t.logCmd(cmd)
@@ -390,9 +454,8 @@ func (t *task) getPlaybookArgs() ([]string, error) {
 	}
 
 	args := []string{
-		"-i", util.Config.TmpPath + "/inventory_" + strconv.Itoa(t.task.ID),
+		"-i", fmt.Sprintf("%s/inventory_%d",util.Config.TmpPath, t.task.ID),
 	}
-
 	if t.inventory.SshKeyID != nil {
 		args = append(args, "--private-key="+t.inventory.SshKey.GetPath())
 	}
@@ -403,6 +466,10 @@ func (t *task) getPlaybookArgs() ([]string, error) {
 
 	if t.task.DryRun {
 		args = append(args, "--check")
+	}
+
+	if *t.template.VaultID != 0 {
+		args = append(args, "--vault-password-file", t.vaultKey.GetPath())
 	}
 
 	if len(t.environment.JSON) > 0 {
@@ -424,6 +491,24 @@ func (t *task) getPlaybookArgs() ([]string, error) {
 			return nil, err
 		}
 	}
+	if t.template.UserVars {
+		err := t.InstallUserVarFile()
+		if err != nil {
+			t.log("Could not write user vars file")
+			return nil, err
+		}
+		args = append(args, "--extra-vars", fmt.Sprintf("@%s/user_vars_%d",util.Config.TmpPath, t.task.ID))
+	}
+
+	if t.template.UserVault {
+		err := t.InstallVaultFiles()
+		if err != nil {
+			t.log("Could not write vault files")
+			return nil, err
+		}
+		args = append(args, "--vault-password-file", fmt.Sprintf("%s/vault_pass_%d",util.Config.TmpPath, t.task.ID))
+		args = append(args, "--extra-vars", fmt.Sprintf("@%s/vault_%d",util.Config.TmpPath, t.task.ID))
+	}
 
 	if t.template.OverrideArguments {
 		args = extraArgs
@@ -444,7 +529,6 @@ func (t *task) envVars(home string, pwd string, gitSSHCommand *string) []string 
 	if gitSSHCommand != nil {
 		env = append(env, fmt.Sprintf("GIT_SSH_COMMAND=%s", *gitSSHCommand))
 	}
-
 	return env
 }
 

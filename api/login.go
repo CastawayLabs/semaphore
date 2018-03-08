@@ -111,6 +111,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 		- fetch user from database by username/email
 		- create user in database if doesn't exist & ldap record found
 		- check password if non-ldap user
+		- cache password for vault access
 		- create session & send cookie
 	*/
 
@@ -194,7 +195,10 @@ func login(w http.ResponseWriter, r *http.Request) {
 		Value: encoded,
 		Path:  "/",
 	})
-
+	err = util.UserVaultCache.AddEntry(login.Auth, login.Password)
+	if err != nil {
+		log.Error("Could not add cached password for " + login.Auth);
+	}
 	w.WriteHeader(http.StatusNoContent)
 }
 
@@ -205,6 +209,5 @@ func logout(w http.ResponseWriter, r *http.Request) {
 		Expires: time.Now().Add(24 * 7 * time.Hour * -1),
 		Path:    "/",
 	})
-
 	w.WriteHeader(http.StatusNoContent)
 }

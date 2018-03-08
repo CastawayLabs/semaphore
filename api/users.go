@@ -24,6 +24,7 @@ func getUsers(w http.ResponseWriter, r *http.Request) {
 
 func addUser(w http.ResponseWriter, r *http.Request) {
 	var user db.User
+
 	if err := mulekick.Bind(w, r, &user); err != nil {
 		return
 	}
@@ -97,7 +98,7 @@ func updateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if _, err := db.Mysql.Exec("update user set name=?, username=?, email=?, alert=?, admin=? where id=?", user.Name, user.Username, user.Email, user.Alert, user.Admin, oldUser.ID); err != nil {
+	if _, err := db.Mysql.Exec("update user set name=?, username=?, email=?, alert=?, admin=?, extra_vars=?, vault=? where id=?", user.Name, user.Username, user.Email, user.Alert, user.Admin, user.ExtraVars, user.Vault, oldUser.ID); err != nil {
 		panic(err)
 	}
 

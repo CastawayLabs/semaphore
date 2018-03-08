@@ -1,14 +1,23 @@
 define(['controllers/projects/taskRunner'], function () {
-	app.registerController('ProjectTemplatesCtrl', ['$scope', '$http', '$uibModal', 'Project', '$rootScope', '$window', function ($scope, $http, $modal, Project, $rootScope, $window) {
-		$http.get(Project.getURL() + '/keys?type=ssh').success(function (keys) {
-			$scope.sshKeys = keys;
+	app.registerController('ProjectTemplatesCtrl', ['$scope', '$http', '$uibModal', 'Project', '$rootScope', '$window',function ($scope, $http, $modal, Project, $rootScope, $window) {
+		$http.get(Project.getURL() + '/keys?type=ssh&filter=public').success(function (keys) {
+			$http.get(Project.getURL() + '/keys?type=vault').success(function (vaults) {
+				$scope.sshKeys = keys;
+				$scope.sshKeysAssoc = {};
+				keys.forEach(function (k) {
+					if (k.removed) k.name = '[removed] - ' + k.name;
+					$scope.sshKeysAssoc[k.id] = k;
+				});
 
-			$scope.sshKeysAssoc = {};
-			keys.forEach(function (k) {
-				if (k.removed) k.name = '[removed] - ' + k.name;
-				$scope.sshKeysAssoc[k.id] = k;
+				$scope.vaultKeys = vaults;
+				$scope.vaultAssoc = {};
+				vaults.forEach(function (k) {
+					if (k.removed) k.name = '[removed] - ' + k.name;
+					$scope.vaultAssoc[k.id] = k;
+				});
 			});
 		});
+
 		$http.get(Project.getURL() + '/inventory').success(function (inv) {
 			$scope.inventory = inv;
 
@@ -79,6 +88,7 @@ define(['controllers/projects/taskRunner'], function () {
 		$scope.add = function () {
 			var scope = $rootScope.$new();
 			scope.keys = $scope.sshKeys;
+			scope.vault = $scope.vaultKeys;
 			scope.inventory = $scope.inventory;
 			scope.repositories = $scope.repos;
 			scope.environment = $scope.environment;
@@ -100,6 +110,7 @@ define(['controllers/projects/taskRunner'], function () {
 			var scope = $rootScope.$new();
 			scope.tpl = template;
 			scope.keys = $scope.sshKeys;
+			scope.vault = $scope.vaultKeys;
 			scope.inventory = $scope.inventory;
 			scope.repositories = $scope.repos;
 			scope.environment = $scope.environment;

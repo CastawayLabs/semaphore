@@ -5,7 +5,6 @@ UPDATE access_key SET owner=0;
 UPDATE access_key SET `owner`=0;
 #SET SESSION sql_mode = @SAVE_sql_modes;
 
-ALTER TABLE user ADD admin BOOLEAN NOT NULL DEFAULT 1 AFTER password;
 ALTER TABLE user ADD COLUMN `extra_vars` TEXT;
 ALTER TABLE user ADD COLUMN `vault` TEXT;
 UPDATE user SET extra_vars = "", vault="";

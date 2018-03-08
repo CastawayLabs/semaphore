@@ -33,10 +33,12 @@ func KeyMiddleware(w http.ResponseWriter, r *http.Request) {
 
 func GetKeys(w http.ResponseWriter, r *http.Request) {
 	project := context.Get(r, "project").(db.Project)
+	user := context.Get(r, "user").(*db.User)
 	var keys []db.AccessKey
 
 	sort := r.URL.Query().Get("sort")
 	order := r.URL.Query().Get("order")
+	filter := r.URL.Query().Get("filter")
 
 	if order != "asc" && order != "desc" {
 		order = "asc"
@@ -47,9 +49,17 @@ func GetKeys(w http.ResponseWriter, r *http.Request) {
 		"ak.type",
 		"ak.project_id",
 		"ak.key",
-		"ak.removed").
+		"ak.removed",
+		"ak.owner").
 		From("access_key ak")
-
+	switch filter {
+	case "public":
+		q = q.Where("ak.owner=0")
+	case "private":
+		q = q.Where("ak.owner!=0")
+	default:
+		q = q.Where("ak.owner=0 or ak.owner=?", user.ID)
+	}
 	if t := r.URL.Query().Get("type"); len(t) > 0 {
 		q = q.Where("type=?", t)
 	}
@@ -68,7 +78,6 @@ func GetKeys(w http.ResponseWriter, r *http.Request) {
 	if _, err := db.Mysql.Select(&keys, query, args...); err != nil {
 		panic(err)
 	}
-
 	mulekick.WriteJSON(w, http.StatusOK, keys)
 }
 
@@ -81,7 +90,7 @@ func AddKey(w http.ResponseWriter, r *http.Request) {
 	}
 
 	switch key.Type {
-	case "aws", "gcloud", "do":
+	case "aws", "gcloud", "do", "vault":
 		break
 	case "ssh":
 		if key.Secret == nil || len(*key.Secret) == 0 {
@@ -99,7 +108,7 @@ func AddKey(w http.ResponseWriter, r *http.Request) {
 
 	secret := *key.Secret + "\n"
 
-	res, err := db.Mysql.Exec("insert into access_key set name=?, type=?, project_id=?, `key`=?, secret=?", key.Name, key.Type, project.ID, key.Key, secret)
+	res, err := db.Mysql.Exec("insert into access_key set name=?, type=?, project_id=?, `key`=?, secret=?, owner=?", key.Name, key.Type, project.ID, key.Key, secret, key.Owner)
 	if err != nil {
 		panic(err)
 	}
@@ -124,13 +133,11 @@ func AddKey(w http.ResponseWriter, r *http.Request) {
 func UpdateKey(w http.ResponseWriter, r *http.Request) {
 	var key db.AccessKey
 	oldKey := context.Get(r, "accessKey").(db.AccessKey)
-
 	if err := mulekick.Bind(w, r, &key); err != nil {
 		return
 	}
-
 	switch key.Type {
-	case "aws", "gcloud", "do":
+	case "aws", "gcloud", "do", "vault":
 		break
 	case "ssh":
 		if key.Secret == nil || len(*key.Secret) == 0 {
@@ -145,7 +152,6 @@ func UpdateKey(w http.ResponseWriter, r *http.Request) {
 		})
 		return
 	}
-
 	if key.Secret == nil || len(*key.Secret) == 0 {
 		// override secret
 		key.Secret = oldKey.Secret
@@ -153,8 +159,7 @@ func UpdateKey(w http.ResponseWriter, r *http.Request) {
 		secret := *key.Secret + "\n"
 		key.Secret = &secret
 	}
-
-	if _, err := db.Mysql.Exec("update access_key set name=?, type=?, `key`=?, secret=? where id=?", key.Name, key.Type, key.Key, key.Secret, oldKey.ID); err != nil {
+	if _, err := db.Mysql.Exec("update access_key set name=?, type=?, `key`=?, secret=?, owner=? where id=?", key.Name, key.Type, key.Key, key.Secret, key.Owner, oldKey.ID); err != nil {
 		panic(err)
 	}
 
@@ -180,12 +185,18 @@ func RemoveKey(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
+	// is the key used as vault secret key?
+	templatesVC, err := db.Mysql.SelectInt("select count(1) from project__template where project_id=? and vault_id=?", *key.ProjectID, key.ID)
+	if err != nil {
+		panic(err)
+	}
+
 	inventoryC, err := db.Mysql.SelectInt("select count(1) from project__inventory where project_id=? and ssh_key_id=?", *key.ProjectID, key.ID)
 	if err != nil {
 		panic(err)
 	}
 
-	if templatesC > 0 || inventoryC > 0 {
+	if templatesC > 0 || inventoryC > 0 || templatesVC > 0 {
 		if len(r.URL.Query().Get("setRemoved")) == 0 {
 			mulekick.WriteJSON(w, http.StatusBadRequest, map[string]interface{}{
 				"error": "Key is in use by one or more templates / inventory",
